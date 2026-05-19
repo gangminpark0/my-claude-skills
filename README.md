@@ -11,10 +11,10 @@ Personal Claude Code skills, version-controlled for sync across machines.
 
 ```bash
 # Windows (Git Bash / PowerShell)
-git clone https://github.com/<your-github-username>/my-claude-skills.git "$HOME/.claude/skills"
+git clone https://github.com/gangminpark0/my-claude-skills.git "$HOME/.claude/skills"
 
 # macOS / Linux
-git clone https://github.com/<your-github-username>/my-claude-skills.git ~/.claude/skills
+git clone https://github.com/gangminpark0/my-claude-skills.git ~/.claude/skills
 ```
 
 If `~/.claude/skills/` already exists with other content, clone elsewhere and copy folders in selectively instead of clobbering.
