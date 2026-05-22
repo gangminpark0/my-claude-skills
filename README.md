@@ -6,6 +6,7 @@ Personal Claude Code skills, version-controlled for sync across machines.
 
 - **academic-paper-writing** — Author conventions for empirical research papers across fields.
 - **korean-policy-report** — Conventions for Korean policy/research reports (정책·연구 보고서) submitted to dispatchers like KERI, KIET, KDI, KIEP, etc.
+- **paper-revision** — Reviewer response, revised manuscript, and cover letter conventions for journal R&R submissions.
 
 ## Install on a new machine
 

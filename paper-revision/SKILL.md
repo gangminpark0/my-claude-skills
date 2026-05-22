@@ -1,0 +1,94 @@
+---
+name: paper-revision
+description: 학술 논문 리비전(revise & resubmit) 패키지 작성 전용 스킬. 사용자가 "리비전", "revision", "revise and resubmit", "R&R", "리뷰어 코멘트", "reviewer response", "response letter", "응답서", "리뷰어 응답", "cover letter", "커버레터", "편집자 응답", "2차 수정본", "R1/R2/R3 폴더", "리비전 반영", "빨간색으로 표시" 등을 언급하거나, reviewer의 코멘트에 대응하여 원고·응답서·커버레터를 작성/수정하는 모든 맥락에서 반드시 사용. 리뷰어 응답서(Response letter)의 표준 구조(코멘트 인용 박스 + Response 헤딩 + 빨간색 응답 + manuscript excerpt), 본문 리비전 반영 원칙(빨간색 하이라이팅·섹션 번호·참고문헌 무결성·다중 검증 라운드), Cover letter 원칙(이전 리비전 양식 승계·짧은 요약·리뷰어 외 개선사항 명시)을 통합 제공. 사용자가 "그냥 원고 새로 써줘"라고 해도 reviewer 문맥이 조금이라도 있으면 적극적으로 트리거할 것.
+---
+
+# Paper Revision (학술 논문 R&R 대응)
+
+학술지 reviewer 코멘트에 대응하는 리비전 패키지 — **Response letter**, **Revised manuscript**, **Cover letter** 세 축의 작업 원칙을 모은 스킬이다. 저널마다 디테일은 다르지만, Gangmin 교수님과 반복해 온 실제 작업에서 수렴된 패턴을 기준으로 한다.
+
+리비전은 **형식(format)이 내용만큼 중요하다**. 에디터/리뷰어는 응답서를 훑어보고 "내 코멘트에 성실히 답했는가"를 시각적으로 먼저 판단한다. 따라서 이 스킬은 "무엇을 쓸 것인가"보다 "어떤 시각적/구조적 규약을 따를 것인가"에 더 많은 분량을 할애한다.
+
+## 작업 시작 시 먼저 확인할 것
+
+리비전 작업을 요청받으면, **파일을 만지기 전에** 다음을 확인한다. 이전 라운드의 규약을 이어받는 것이 리비전 작업에서 가장 중요한 원칙이기 때문이다.
+
+1. **몇 번째 리비전인가** — R1/R2/R3 폴더 구조인지, 저널 이름은 무엇인지.
+2. **이전 리비전 산출물이 있는가** — `Cover Letter.docx`, `Response to Reviewer N.docx`, `Revised Manuscript.docx` 등. 있다면 **반드시 먼저 읽어서 양식을 파악**한다. 폰트, 줄 간격, 들여쓰기, 인용 박스 스타일, 섹션 헤딩 규칙 — 모두 이전 라운드를 그대로 승계한다.
+3. **리뷰어 코멘트 원문** — 에디터 이메일, 저널 포털 copy-paste, 별도 파일 등 어디에 있는지. 코멘트 수와 리뷰어 수 파악.
+4. **현재 manuscript 상태** — 이미 교수님이 일부 수정을 반영한 상태인지, 원본 그대로인지. Appendix 5처럼 별도로 준비된 asset이 있는데 manuscript에 아직 삽입되지 않은 경우도 있다 (실제 사례 있음).
+5. **투고 시스템이 요구하는 제출물 목록** — 일부 저널은 "Response to Reviewers"를 본문 박스에 붙여넣게 하고, 일부는 파일 업로드를 받는다.
+
+이 단계에서 이미 작업한 이전 세션이 기억나지 않으면 `mcp__session_info__list_sessions`로 "revision", "reviewer", "response" 관련 세션을 찾아 전사를 읽고 연속성을 회복한다.
+
+## 세 축의 산출물과 참고 문서
+
+이 스킬은 세 개의 독립된 산출물을 다룬다. 각각의 상세 원칙은 references/ 하위 문서로 분리되어 있으니, **해당 작업을 시작하기 직전에 읽는다.**
+
+- `references/response-letter.md` — 리뷰어 응답서(Response letter) 구조·스타일·검증
+- `references/manuscript-revision.md` — 본문 리비전 반영 원칙(빨간색·섹션 번호·참고문헌 무결성)
+- `references/cover-letter.md` — Cover letter / 편집자 응답
+
+세 산출물이 **서로 일관**해야 한다. Response letter에 인용한 excerpt는 manuscript의 실제 문장과 토씨 하나 틀리지 않아야 하고, Cover letter의 "이번 수정의 요지"는 Response letter의 주요 응답과 방향이 맞아야 한다. 한 산출물을 고친 후에는 다른 산출물과의 정합성을 반드시 재점검한다.
+
+## 리비전 작업의 기본 원칙 (모든 산출물 공통)
+
+### 변경사항은 빨간색으로, 이유는 응답서로
+
+본문 수정은 **전부 빨간색(RGB: 255,0,0)** 으로 표시한다. 에디터와 리뷰어가 diff를 눈으로 따라가야 하기 때문이다. 삭제선(strikethrough)은 일반적으로 쓰지 않는다 — 삭제된 텍스트를 함께 보여줄 필요가 없는 한, 깔끔하게 지우고 새 텍스트만 빨간색으로 넣는다. Cover letter에도 "All changes are marked in red in the revised manuscript" 문장을 넣어 이를 명시한다.
+
+### 이전 라운드 양식을 **그대로** 승계한다
+
+R1에서 쓴 폰트, 제목 스타일, 응답 박스 포맷을 R2에서 바꾸지 않는다. 리비전은 연속적인 대화이고, 양식이 계속 바뀌면 에디터가 피로해진다. 실제로 Gangmin 교수님 작업에서 "R1 커버레터가 R2 폴더에 있으니 그거 그대로 써줘"라는 요청이 반복되었다. 기존 파일을 `cp`로 복사해서 **본문만 교체**하는 방식이 일반적으로 더 안전하다. 새 파일을 zero부터 만들면 스타일 다운그레이드가 일어나기 쉽다.
+
+### 리뷰어 코멘트 외에도 능동적으로 개선한 부분을 밝힌다
+
+Response letter에서 요구받지 않은 수정은 보통 세 종류다: (a) 오타·문법, (b) 참고문헌 목록 정리(orphan ref 삭제, 누락 ref 추가), (c) 섹션 번호·figure caption 정합. 이런 "self-initiated improvements"는 Cover letter 마지막 단락에 한 문장으로 요약하거나, Response letter 서문에 포함한다. 에디터는 이를 성실함의 신호로 받아들인다.
+
+### 다중 검증 라운드 (multi-pass verification)
+
+교수님은 반복적으로 "10회 검증해줘", "여러 방면 검증" 같은 지시를 한다. 이는 단순 반복이 아니라 **서로 다른 관점으로 여러 번 스캔**하라는 뜻이다. 실제로 쓸모 있었던 검증 축들:
+
+- 포맷 축: 빨간색 적용, 들여쓰기, 폰트 일관성, 줄 간격, 헤딩 스타일
+- 참고문헌 무결성 축: 본문 인용 ↔ reference list 양방향 매칭, orphan ref, missing ref, 연도 불일치 ((n.d.) vs 실제 연도)
+- 문법/오타 축: 마침표 뒤 공백 누락, treatment 같은 흔한 오타, citation 내 `& ,` 구두점
+- 섹션 번호 축: 4.3 → 4.5 (4.4 누락) 같은 gap, figure caption 중복
+- 정합성 축: Response letter excerpt ↔ manuscript 실제 문장 일치, Cover letter 요약 ↔ Response letter 본문 일치
+- Abbreviation 축: funder 약어 (MSIT → Ministry of Science and ICT), 첫 사용 시 풀네임 규칙
+
+검증 결과는 **수정할 것**과 **교수님 확인이 필요한 것**을 분리해서 보고한다. 예를 들어 참고문헌 연도 불일치나 본문에서 인용한 존재하지 않는 ref는 함부로 추가·수정하지 않고 교수님께 결정권을 넘긴다.
+
+### "파일이 안 보인다"는 호소에 대응하기
+
+실제 사례에서 교수님이 "내 폴더에 파일이 안 보인다"고 했을 때, 원인은 파일명 컨벤션 불일치(`Manuscript_revised.docx` vs `Revised Manuscript.docx`)였다. 이런 경우 **컴퓨터 링크로 정확한 경로를 제시**하고, 원하는 파일명으로 `cp`해주고, `mcp__cowork__present_files`로 가시화한다. 내부 `/sessions/...` 경로를 노출하지 않고 사용자 폴더 기준 상대 경로로 안내한다.
+
+## 한국어-영어 병행 작업
+
+교수님 워크플로우에서 논문 본문과 응답서는 **영어**로 작성하되, 대화는 **한국어**로 진행된다. 따라서:
+
+- 교수님과의 설명·보고·확인 질문은 한국어로.
+- 산출물(원고·응답서·커버레터) 내부 텍스트는 영어로.
+- 영어 문장에 대해 "어때?" 물으시면 초첨화된 프루프리딩을 한다: 추상적 표현 지적, 단복수 통일, 시제 통일(abstract는 과거형 통일이 일반적으로 안전), funding acknowledgment의 약어 풀네임화 등. 답은 "전체적으로 좋은데, 몇 가지만" 하는 식으로 과도한 재작성을 피하고, 교수님이 받아들일 수 있는 작은 수정을 제안한다.
+
+## 작업 순서 (일반적인 경우)
+
+1. **맥락 파악** — 위 "작업 시작 시 먼저 확인할 것" 수행.
+2. **리뷰어 코멘트를 구조화** — 리뷰어별·코멘트별로 번호 매김(R1Q1, R1Q2, R2Q1…). 이 번호는 Response letter와 내부 추적 모두에 사용.
+3. **본문 수정 먼저, 응답서는 그 다음** — 응답서에 excerpt를 인용하려면 본문 최종본이 먼저 확정되어야 한다. `references/manuscript-revision.md` 참고.
+4. **Response letter 작성** — 이전 라운드 파일이 있으면 복사해서 본문 교체. `references/response-letter.md` 참고.
+5. **Cover letter 작성** — 마지막. 본문과 응답서가 다 정해진 뒤에 전체 리비전의 요지를 간결히. `references/cover-letter.md` 참고.
+6. **전체 검증 라운드** — 위 다중 검증 원칙에 따라. 중요한 건 "내가 수정할 것"과 "교수님 결정 필요"를 분리해 보고.
+7. **산출물 링크 제공** — `computer://` 링크로 사용자 폴더 경로. 파일명은 이전 라운드와 동일 컨벤션.
+
+## 트리거 힌트 — 이럴 때 이 스킬을 쓴다
+
+- "R2 response letter 써줘", "리뷰어 응답 좀 봐줘"
+- "cover letter 간단하게", "지난번 cover letter 양식으로"
+- "이 부분 리비전 반영해줘", "빨간색으로 표시해줘"
+- "reviewer 코멘트에 답해줘", "리뷰어가 이렇게 지적했는데"
+- "응답서에 들어갈 excerpt 확인", "response excerpt가 원문이랑 맞는지"
+- "10회 검증", "여러 번 검증해줘" — (리비전 문맥에서)
+- "R1/R2/R3 폴더", "이번 submission", "manuscript_revised.docx"
+- "orphan reference", "참고문헌 정리", "본문에 없는 ref"
+
+리비전이라는 단어가 직접 등장하지 않아도, **reviewer·editor·submission·manuscript** 문맥이 조금이라도 있으면 적극적으로 트리거한다. Undertriggering이 overtriggering보다 비용이 크다 — 리비전은 한 번 양식이 어긋나면 되돌리기 번거롭기 때문이다.
