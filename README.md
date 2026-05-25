@@ -4,9 +4,9 @@ Personal Claude Code skills, version-controlled for sync across machines.
 
 ## Skills
 
-- **academic-paper-writing** — Author conventions for empirical research papers across fields.
-- **korean-policy-report** — Conventions for Korean policy/research reports (정책·연구 보고서) submitted to dispatchers like KERI, KIET, KDI, KIEP, etc.
-- **paper-revision** — Reviewer response, revised manuscript, and cover letter conventions for journal R&R submissions.
+- **academic-paper-writing** — Author conventions for writing, revising, and verifying empirical research papers across fields (economics, management, finance, sociology, public policy, IS, OB, marketing, accounting). Covers workflow philosophy, paper architecture (title → abstract → intro → theory → method → results → robustness → further analyses → discussion), cross-section consistency, prose craft (typography, em-dash rules, sentence length), empirical conventions (lock files, imputation, identification), figures and tables, submission package (cover letter, title page, data availability), workflow tools (memo extraction, formatting preservation), and audit-script catalog.
+- **korean-policy-report** — Conventions for Korean policy / research reports (정책·연구 보고서) submitted to dispatchers like KERI, KIET, KDI, KIEP, etc.
+- **paper-revision** — R&R (revise & resubmit) response-letter writing for journal submissions. Covers reviewer-comment structuring, response-letter format (citation box + Response heading + red excerpts), manuscript revision with red highlighting, cover-letter conventions for revisions, and multi-pass verification.
 
 ## Install on a new machine
 

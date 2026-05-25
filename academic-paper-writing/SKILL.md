@@ -174,6 +174,49 @@ If a hypothesis appears without a preceding development paragraph, add one. If t
 
 User signal: "가설을 만들어내는 논리가 없는것 같지? 그것도 추가."
 
+### 2.4a Theory section (§2.x) is a literature review, NOT hypothesis prep
+
+§2.x (theory) and §2.3 (hypothesis development) play distinct roles. Don't blur them:
+
+**§2.x — Literature review:**
+- What the field has documented about the phenomenon (adoption trends, workforce patterns, prior empirical findings).
+- What existing research designs have done (demand-side surveys, supply-side resume work, exposure indices).
+- The observed gap that this paper fills.
+- Cite the literature; describe its findings; characterize its limits.
+
+**§2.3 — Hypothesis motivation:**
+- "We expect X to be related to Y" reasoning lives HERE, not in §2.x.
+- Theoretical foundations applied to the specific prediction (ACAP, complementary-assets, KBV, etc.).
+- One development paragraph per hypothesis, then the hypothesis statement.
+
+A common drift: theory section starts as a lit review but slides into "We expect domain-background workers to be more productive..." That's hypothesis-prep prose; move it to §2.3.
+
+User signal: "이 아래 부분은 가설에 나올만한 얘기같지. 지금 [§2.x]에서 나올만한 얘기는 그런게 아닌것 같은데."
+
+### 2.4b No specific industry-name lists in the theory section
+
+In theory paragraphs, prefer general phrases ("AI-using industries", "data-intensive sectors", "regulated services") to specific industry enumerations ("manufacturing, healthcare, finance, and retail").
+
+The specific industries belong in the sectoral results subsection, not in the theoretical setup. Theory should be abstract enough to apply across the empirical contexts the paper actually tests.
+
+User signal: "이런 구체적인 industry name이 필요하진 않겠어."
+
+### 2.4c Concrete classification examples belong with the hypothesis, not buried in method
+
+When the paper introduces a typology (Specialist vs Hybrid vs Translator, exploit vs explore, junior vs senior), the concrete worker/firm-level example that pins down the distinction should sit in §2.x near where the typology is introduced or in §2.3 near the relevant hypothesis — NOT buried in §3 method.
+
+The reader needs the concrete distinction *before* reading the hypothesis. If the example only appears in §3.5, readers absorb the hypothesis with an abstract typology and have to flip forward to disambiguate. Move the example up; leave §3 with a brief cross-reference.
+
+For multi-category typologies, reinforce the distinction repeatedly: §1 intro mention → §2.x example → §2.3 hypothesis re-emphasis → §4.x result-paragraph reminder → §7.2 discussion framing. Repetition makes the distinction stick.
+
+User signal: "지금 예시가 그 method에 있을텐데 그거 hypothesis 설명하는 쪽으로 올리는게 좋겠어. 반복적으로 쓰는게 중요하겠네."
+
+### 2.4d Causal direction explicit when summarizing prior literature
+
+When summarizing prior empirical findings, write the causal arrow explicitly. "When firms invest in AI, they subsequently grow faster" — NOT "firms that grow faster have AI investments." The first sentence preserves the direction the prior literature established (AI → growth); the second sentence reads as if growing firms are selected on AI investment, reversing the arrow.
+
+User signal: "이건 좀 이상해. 그러니까 ai를 투자하는 기업이 조직을 빠르게 확장한다라고 나와야지. 지금은 조직을 확장하는 기업이 포착되는 것처럼 서술된것 같아."
+
 ## 2.5 Hypothesis statement format
 
 - One- or two-sentence declarative statements.
@@ -265,6 +308,32 @@ For analyses beyond the pre-registered hypotheses:
 - Be explicit when an imprecisely-identified split qualifies the main story (don't bury it).
 - Don't promote these findings to "headline" status; they extend, qualify, or contextualize.
 
+### 2.9a Further-analysis subsection headings use result-summary style
+
+Subsection headings within "further analyses" (or extended results) sections preview the finding, not the test name.
+
+Bad (test-descriptive):
+> 6.1 Industry heterogeneity within the H2 composition test
+> 6.2 AI use orientation
+> 6.3 Junior–senior pairing within AI roles
+
+Good (result-summary):
+> 6.1 The hybrid advantage concentrates in manufacturing
+> 6.2 Hybrid talent's payoff concentrates in exploration-oriented AI use
+> 6.3 Cross-experience pairing matters in manufacturing
+
+The reader sees the substantive result before reading the prose. This is the same deductive convention as §2.7 results subsections.
+
+User signal: "어떤 test 이러지 말고 결과 요약을 소제목으로 쓰는건 어때?"
+
+### 2.9b Sectoral / industry implications are "further analysis," NOT "theoretical implications"
+
+Sectoral split results belong in §6 (further analyses) and should be mentioned in the limitations section if relevant, but they should NOT be cast as a separate "theoretical contribution" in §7.2. Theoretical contributions are paper-wide claims that extend or qualify literatures; sectoral splits are scope/heterogeneity claims that contextualize the headline finding.
+
+A common drift: §7.2 lists a Third contribution as "the paper sharpens the interpretation of industry heterogeneity in AI returns..." This is dressing up a §6 finding as a §7.2 contribution. Replace with a main-analysis-driven theoretical implication (e.g., strategic human capital framing) and let the sector result speak for itself in §6.
+
+User signal: "이건 지금 further analysis에 대한 거자나. 이거 말고 main 분석에서 시사점을 하나더."
+
 ## 2.10 Discussion / Conclusion
 
 **Structure varies by field:**
@@ -277,6 +346,38 @@ For analyses beyond the pre-registered hypotheses:
 - **Theoretical contribution**: tie each contribution to a literature stream. Use a unifying-premise sentence.
 - **Practical / policy / managerial implication** if relevant to the field. Open with a one-sentence message.
 - **Limitations**: honest about real limitations. For marginally significant findings, acknowledge precision limits explicitly.
+
+### 2.10a Intro contributions and Discussion contributions must use the same ordering
+
+The list of contributions in the Introduction's contributions paragraph (last paragraph of §1) and the list of contributions in the Discussion's theoretical-implications subsection (§7.2 or equivalent) must be the SAME contributions in the SAME ORDER.
+
+If you reorder one (e.g., ACAP-first instead of utilization-shift-first in §7.2), reorder the other to match. Readers compare these two lists; mismatched orderings or substituted entries read as inconsistency.
+
+When applying paper-wide reframing, audit both lists side by side.
+
+### 2.10b Managerial / practical implications use plain language, not hypothesis labels
+
+In §7.3 (managerial implications) or equivalent, drop the "(H3)" / "(H4)" trailing tags and the "the H4 evidence shows that..." phrasings. Use plain prose that the managerial audience can absorb without flipping back to §2.3.
+
+Bad:
+> "Second, firms should attend to the organizational skill bundles surrounding AI roles. The strongest mechanism evidence is project-management skill demand in AI vacancies (H3)."
+
+Good:
+> "Second, firms should attend to the organizational skill bundles surrounding AI roles. The strongest demand-side mechanism evidence is stronger demand for coordination, analysis, and project-management skills within AI vacancies."
+
+Hypothesis labels are operational shorthand for the results section, not for managerial communication.
+
+User signal: "여기에는 굳이 H2, H3, 이런 기호를 쓰지않고 plain하게 가야하지 않겠어?"
+
+### 2.10c Limitations should NOT list items handled in robustness
+
+If §5 (robustness) addresses a concern (alternative IV, alternative time window, alternative threshold), do not also list it as a limitation in §7.4. Listing in both places signals "we know this is a problem and didn't fix it" rather than "we fixed it."
+
+Limitations should be items the paper genuinely cannot address: unmeasured selection, unobserved governance, time-invariant constructs that need a future panel to test causally.
+
+Don't list speculative future-dynamics limitations either ("the post-2022 generative-AI era may reshape these patterns") — they invite skepticism without strengthening the paper.
+
+User signal: "이건 robust 분석 했으니까 limitation에서 빼주고. … 이 얘기도 빼줘. 좀 불안하네."
 
 ---
 
@@ -390,6 +491,18 @@ User discovery pattern: "[novel construct] 써있긴 했는데 이거 어디에 
 - Coefficient-heavy sentences are acceptably long because the density is necessary; just ensure the surrounding prose introduces and concludes them cleanly.
 
 User signal: "줄여" / "shorten" / "간결한 문장 스타일."
+
+### 4.1a Typography rules (body, captions, table notes, cover letter)
+
+These typography conventions apply paper-wide. Apply them as a sweep before final submission and verify in the audit script.
+
+- **No em-dashes (—, U+2014) in body prose.** Rewrite each occurrence as a comma, parenthetical, or sentence break. Em-dashes as N/A markers inside regression-table cells are exempt (different convention). The cover letter follows the same rule.
+- **No "§" symbol in body prose; write "Section" instead.** "See §3.6" → "See Section 3.6." Many template generators emit "§" by default; sweep at the end.
+- **No slash-pair shorthand for paired-named methods.** Replace "Bartik / shift-share" with "Bartik shift-share" (or one term alone). Same for any "X / Y" composite-name pattern in body prose.
+- **References heading carries no section number.** Write "REFERENCES" — not "8. REFERENCES." Body sections are numbered; References is a back-matter heading.
+- **Variable names in body prose are italicized** (carried over from §4.6).
+
+User signal: "이런 em dash를 쓰지 말아줘. 본문 전체에 해당되는 얘기." / "논문 전체에서 이 기호 쓰지말고 Section이라고 쓰는게 좋겠어."
 
 ## 4.2 Paragraph "bumper" detection
 
@@ -631,6 +744,31 @@ If you can't articulate WHY the figure is in the main paper in one sentence, it 
 - Sample size and firm count as separate rows.
 - Within R² (and overall R² if relevant) for FE regressions.
 - Standard footer items: fixed-effects indicators, cluster type, sample restrictions, control variables.
+- **Caption is bold; "Note." prefix on table notes is italic.** Same for "Notes:" on figure captions. When scripting a table-note edit, the default `add_run()` strips italic — restore it explicitly.
+- **Column-N formatting must match Column-1 formatting.** When swapping content of a column via `cell.text = …` in python-docx, the cell's bold, center alignment, font name, font size, and multi-line break structure all get wiped. Copy the source-column formatting explicitly after the content swap.
+
+### 7.3a [INSERT TABLE N HERE] markers go at the end of their subsection
+
+In manuscripts that place all tables at the back (typical journal-submission practice), the in-body marker `[INSERT TABLE N HERE]` indicates to the typesetter where the table should appear in the final printed version. Conventional placement:
+
+- **Marker sits at the end of the subsection that discusses the table**, right before the next subsection heading.
+- NOT in the middle of a paragraph.
+- NOT between the introductory result-sentence paragraph and the detailed walk-through paragraph.
+
+Example layout for §4.1:
+```
+4.1 Baseline relation between X and Y
+
+[Lede paragraph: H1 is supported. Table 4 reports …]
+
+[Detailed paragraph: IV diagnostics, magnitude interpretation, …]
+
+[INSERT TABLE 4 HERE]
+
+4.2 Next subsection …
+```
+
+User signal: "이 subsection 즉, 4.1 마지막에 table이 오는게 자연스럽지 않겠어?"
 
 ## 7.4 Bundle / composite-index skepticism
 
@@ -677,6 +815,15 @@ Write from the editor's perspective: what helps the editor positively decide to 
 - Title (italic).
 - Journal name (italic).
 - Key technical concepts on first mention (italic).
+- Named worker / firm categories that the paper coins (italic on first mention): e.g., *hybrid*, *specialists*, *translator workers*.
+- Theoretical frameworks (italic on first mention): *absorptive-capacity*, *complementary-assets*.
+
+**Typography in the cover letter mirrors the body:**
+- No em-dashes (—). Rewrite as comma, parenthetical, or sentence break — same body rule applies here.
+- No "§" symbol; write "Section" if cross-referencing.
+- No slash-pair shorthand (e.g., "Bartik / shift-share" → "Bartik shift-share").
+
+The cover letter is part of the submission package and the editor reads it back-to-back with the abstract; tonal/typographical mismatches between them are immediately visible.
 
 **Letterhead and signature:**
 - Right-aligned letterhead with author info at top (include degree such as "Ph.D." after name where appropriate).
@@ -771,6 +918,15 @@ Workflow:
 6. Communicate this rebuild loop explicitly to the user.
 
 If you accidentally overwrite the annotated docx, be honest about the loss and ask the user to either restore from OneDrive / Windows File History or re-paste the memos.
+
+### 9.2a Formatting-preservation caveats when editing docx in place
+
+When the workflow shifts from "regenerate the whole docx from a script" to "edit the docx in place via python-docx" (typical for memo resolution where the user wants comments preserved while specific paragraphs are rewritten), the following formatting wipes happen silently:
+
+- **`replace_paragraph_text()` style helpers strip the first run's bold/italic/font/size unless you snapshot them and re-apply.** Headings, captions, and the "REFERENCES" line lose bold this way. Always snapshot `r.bold / r.font.size / r.font.name / r.italic` from the first non-empty pre-existing run and re-apply on the new run.
+- **`cell.text = "new content"` strips all run formatting in a table cell.** When updating a column's numeric content, also copy the source-column's `bold`, `paragraph.alignment`, font size, and font name onto the destination column. Re-add multi-line break structure (coef / (SE) / [p = .xxx]) explicitly with `.add_break()`.
+- **Word comments embedded in a paragraph survive a python-docx rewrite UNLESS you remove them along with the runs.** Decide up front whether to preserve or strip; if preserving, save the `commentRangeStart` / `commentReference` XML elements before clearing the paragraph and re-insert them after the new run.
+- **End-of-edit audit:** after any in-place edit pass, sweep the whole doc for heading bold, caption bold, "Note." italic, em-dash residue, "§" residue, and slash-pair residue. These are the most common formatting regressions.
 
 ## 9.3 md vs docx ground truth
 
