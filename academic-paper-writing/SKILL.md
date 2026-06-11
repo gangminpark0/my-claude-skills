@@ -255,7 +255,27 @@ Avoid academic-jargon-heavy phrasings. The reader should grasp the mechanism in 
 - State the nesting in the methods section AND in the results section (preferably in table footers).
 - This needs explicit defense — reviewers will ask.
 
-**Equation-rendering caveat (Word docx):** Native Word equations via OMML are hard to generate programmatically. The `pyommlbuilder` Python library produces minimal OMML that Word rejects. If the user wants native equations, the safest paths are (a) keep equations as plaintext in the script and let the user paste them into Word's equation editor manually, or (b) use a Pandoc-based LaTeX → docx pipeline.
+**Equation-rendering caveat (Word docx):** Native Word equations via OMML are hard to generate programmatically. The `pyommlbuilder` Python library produces minimal OMML that Word rejects. If the user wants native equations, the safest paths are (a) keep equations as plaintext in the script and let the user paste them into Word's equation editor manually, or (b) use a Pandoc-based LaTeX → docx pipeline. (Update: the pipeline latex2mathml → Microsoft Office's own `MML2OMML.XSL` via lxml XSLT produces OMML Word accepts, for both display `m:oMathPara` and inline `m:oMath`; give every `m:r` a `w:rPr` with Cambria Math and the body point size, placed after `m:rPr` and before `m:t`.)
+
+### 2.6a Method subsection headings name the artifact, not the activity
+
+Run-in heads (and method headings generally) inside the methods section must name **what the step produces for the paper** — the artifact or purpose — not the processing activity performed while building it.
+
+Bad (work-log style — reads like notes taken while doing the work):
+> Current-role classification
+> Career-background classification
+> Data cleaning and merging
+
+Good (artifact/purpose style — names the output):
+> Identifying the observed AI workforce
+> Measuring hybrid and specialist composition
+> Firm-year AI intensity
+
+Heuristic: if the head could caption a step in a processing pipeline ("...classification", "...preprocessing", "...merging"), rename it to the measure, sample, or construct that the step delivers. Standard data-source heads ("Job postings", "Firm financials") and variable-name heads ("Firm-year AI intensity") already pass.
+
+This is the methods-section counterpart of §2.9a (further-analysis headings preview the result).
+
+User signal: "이렇게 달지말고 결과적으로 우리가 뭘 만드는지 목적에 맞는 소제목을 다는게 좋겠어. 이거는 지금 작업할때 한 얘기같은 소제목이자나."
 
 ## 2.7 Results section — deductive structure
 
