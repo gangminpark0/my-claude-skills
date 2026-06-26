@@ -217,6 +217,16 @@ When summarizing prior empirical findings, write the causal arrow explicitly. "W
 
 User signal: "이건 좀 이상해. 그러니까 ai를 투자하는 기업이 조직을 빠르게 확장한다라고 나와야지. 지금은 조직을 확장하는 기업이 포착되는 것처럼 서술된것 같아."
 
+### 2.4e Each hypothesis subsection stays in its own lane; theory cites no data
+
+When the theory section is organized one-subsection-per-hypothesis (§2.2 = H1, §2.3 = H2, §2.4 = H3):
+- A hypothesis subsection develops ONLY its own hypothesis. Do not pre-empt the others there — no "H2 will be larger", no inverted-U / H3 prediction, no naming the technology-transfer-vs-general contrast inside the H1 subsection. The H1 subsection argues only that the tie, in itself, helps.
+- The theory section makes NO reference to the analysis data or its coding — e.g. "SDC codes licensing and joint development under one flag", "rarely coincide in our data", "the dimension our records measure". Data-construction caveats live in §3.2 (Variables); the theory stays conceptual.
+- The theory section does NOT forward-reference specific regression columns ("column (4) of Table 3 isolates…"). State the idea conceptually; the column belongs in Results.
+- A bridging "empirical-signature map" that pre-announces which result distinguishes each mechanism is itself H2/H3 material; keep it out of the H1 subsection and let Results carry the discrimination (rephrase any later "the Section 2.2 signature map" back-reference to "the mechanisms of Section 2.2").
+
+User signals: "2.2는 H1 설명 섹션인데 H2, H3 얘기가 들어있다 — 다 지워"; "2에서는 분석 데이터(예: SDC) 얘긴 하면 안돼."
+
 ## 2.5 Hypothesis statement format
 
 - One- or two-sentence declarative statements.
@@ -327,6 +337,10 @@ For analyses beyond the pre-registered hypotheses:
 - Industry / sector / context heterogeneity is a strong addition.
 - Be explicit when an imprecisely-identified split qualifies the main story (don't bury it).
 - Don't promote these findings to "headline" status; they extend, qualify, or contextualize.
+
+### 2.9-note Descriptive / robustness tables are not a "Further analysis" dump
+
+When pulling supplement content into the body, do NOT lump everything under one "Further analysis" heading. A matched-sample descriptive-statistics table belongs where the matched sample is described (§3.x identification); a robustness/sensitivity table belongs in the robustness subsection (§4.x) that discusses it. "Further analysis" is for genuinely additional analyses, not for descriptives or for robustness already narrated in Results. If the journal allows, dissolve a thin separate supplement and place each table at its natural discussion point. User signal: "매칭 표본 기술통계는 further analysis가 아니네 … 3nn 민감도도 그런것 같은데."
 
 ### 2.9a Further-analysis subsection headings use result-summary style
 
@@ -496,6 +510,14 @@ When a novel construct is under-emphasized, elevate it.
 
 User discovery pattern: "[novel construct] 써있긴 했는데 이거 어디에 썼는데?" — the user realizes a key construct is buried.
 
+## 3.8 Reference existence / fabrication check
+
+AI-assisted drafts can contain plausible-but-FABRICATED references, or real works cited with the wrong volume/issue/page/year. Before submission, verify EVERY reference exists and is cited correctly:
+- Web-search each entry by title + first author; confirm via the DOI, the publisher page, or Crossref / RePEc / Google Scholar. Fan this out (one check per reference) for speed.
+- Highest fabrication risk: very recent / forthcoming items (last 1-2 years) and the volume/issue/page numbers.
+- **Online-first vs volume year.** A work cited with full volume/issue/pages must carry the YEAR OF THAT VOLUME, not the earlier online-first year (an article printed in Vol 34(1) of 2023 is "2023" even if it appeared online in 2021). If you change the year, change every in-text citation too.
+- Orphan check both ways: every in-text (Author, year) has a list entry, and every list entry is cited at least once. Dropping a vignette or a merged section can orphan its only citation — then delete that reference as well.
+
 ---
 
 # PART 4 — Prose craft
@@ -521,6 +543,13 @@ These typography conventions apply paper-wide. Apply them as a sweep before fina
 - **No slash-pair shorthand for paired-named methods.** Replace "Bartik / shift-share" with "Bartik shift-share" (or one term alone). Same for any "X / Y" composite-name pattern in body prose.
 - **References heading carries no section number.** Write "REFERENCES" — not "8. REFERENCES." Body sections are numbered; References is a back-matter heading.
 - **Variable names in body prose are italicized** (carried over from §4.6).
+- **Spelling standardisation is scoped to author-written text.** When standardising British vs American (pick from the target journal's house style; Taylor & Francis -> British), convert the body, abstract, keywords, captions, and table/figure notes — but do NOT touch reference-list entries (a cited title keeps its ORIGINAL published spelling, e.g. "…reorganization…", "interorganizational learning") and do NOT touch proper nouns in the body (e.g. the official "US Outbound Investment Security Program", "DataStream"). Verify with a both-directions scan (`per cent`/`percent`, `organis`/`organiz`, `-neighbour`/`-neighbor`, `favour`/`favor`).
+- **Spell out cryptic statistical acronyms** the reader will not know (SUTVA -> "no spillover across acquirers"); standard defined ones (DiD, PSM, ATT, ATE, DDD) are fine once introduced.
+- **Compound-modifier hyphens are consistent paper-wide:** "technology-transfer alliance", "joint-venture premium", "staged-acquisition strategy" when modifying a noun; left open as bare nouns ("involves technology transfer"). Title, keywords, and body must agree; if the title also sits on a separate title page / cover letter, change all copies together.
+- **Squared regressors read as the concept with a true superscript** ("KnowledgeSimilarity²", vertAlign, not "KnowSim2" or "^2"); descriptive-table Min/Max keep decimals consistent ("0.000"/"1.000" for a binary variable, not "0"/"1").
+- **Negative numbers: spell "minus" in prose and in table/figure NOTES, but keep the glyph "-" inside numeric TABLE CELLS.** Flag a hyphen-minus before a number only when it appears in running text, never in a data cell.
+- **DOIs/URLs all-or-none.** Either every reference that has a DOI shows it, or none do. The low-risk way to make a mostly-DOI-free list consistent is to REMOVE the stray DOIs (never invent missing ones); if the target journal's style mandates DOIs, that is the author's call, so flag it.
+- **"versus" not "vs"; "column (N)" not "column N"; parenthesise consistently** once the long/parenthesised form is established anywhere. A lone bare "vs", a bare-numeral column reference ("columns 3 and 4"), or a comma where sibling titles use parentheses ("Descriptive statistics, X" versus "Descriptive statistics (X)") is usually the only outlier.
 
 User signal: "이런 em dash를 쓰지 말아줘. 본문 전체에 해당되는 얘기." / "논문 전체에서 이 기호 쓰지말고 Section이라고 쓰는게 좋겠어."
 
@@ -790,6 +819,23 @@ Example layout for §4.1:
 
 User signal: "이 subsection 즉, 4.1 마지막에 table이 오는게 자연스럽지 않겠어?"
 
+### 7.3b Table-renumbering cascade discipline
+
+Inserting, moving, or renumbering one table sets off a cascade. Handle ALL of:
+1. **Plural / range reference forms.** A single-token replace ("Table 3"->"Table 4") MISSES "Tables 3 and 4", "Tables 3 to 5", "Sections 3.3 and 5.5". After any renumber, scan separately for plural "Tables N and/to M" and "Sections N and M" forms.
+2. **Figures that embed a table number IN THE IMAGE.** A coefficient plot titled "(Table 3, columns 1-3)" must be REGENERATED when the DiD table becomes Table 4 — editing the caption is not enough, the number is baked into the raster. Keep the figure-generation script so you can re-emit with the new label, then re-embed at the same display width.
+3. **Monotonic first-mention order.** Tables are numbered in order of first in-text citation. If you move a descriptive/robustness table's discussion to an earlier section, renumber so it is not cited before a lower-numbered table, and physically reorder the end-matter table blocks to match. Confirm the [INSERT TABLE N HERE] markers read 1..N in document order.
+4. **3-cycle renumbers** (A->B, B->C, C->A) need a placeholder pass (A->@@TMP@@, B->A, C->B, @@TMP@@->C) to avoid collisions.
+5. **Table-note cross-refs.** Re-check each note's "same controls as Table X" / "not comparable to the Table Y estimates" still points to the right table.
+
+### 7.3c Re-derive every reported statistic from the paper's own numbers; respect the estimator
+
+A late "numbers" pass should recompute each headline figure from the values the manuscript itself reports, and fix any that do not reconcile, but only after checking the figure is not a different, legitimate quantity.
+- **Percentages must match the table's reported N.** If the text says "62.0 per cent of panel observations are missing" but the Table 1 note reports total N = 330,902 and the variable's own N = 125,977, the rate is (330,902 - 125,977)/330,902 = 61.9 per cent. A reader divides the paper's own numbers and gets 61.9; internal consistency, not the author's loose rounding, governs. The same figure often recurs 2-3 times: change every instance.
+- **Bounded-variable sanity checks.** A [0,1] share with mean m cannot have variance above m(1 - m). A stated "variance 0.24" for a mean-0.317 overlap share is impossible (max 0.2165); the value implied by the reported moments is E[X^2] - mean^2 = 0.310 - 0.317^2 = 0.21 (SD 0.46). Such bounds catch errors no cross-reference check would.
+- **Respect log vs level (Jensen's inequality).** When a count is modelled as ln(1 + count), do NOT "correct" a stated average count to exp(mean of logs) - 1. The arithmetic mean of counts is strictly larger than that back-transform, so a base like "about three patents" can be right even though exp(1.124) - 1 is about 2. If the subsample's arithmetic mean is not reported, FLAG it for the author to confirm rather than silently changing it toward a lower bound.
+- A figure that cannot be reproduced from any reported number is a FLAG, not an automatic edit: ask the author, or change it only when one resolution is unambiguous (matches the table) and the alternative is mathematically impossible.
+
 ## 7.4 Bundle / composite-index skepticism
 
 Composite indices and bundles often appear in early drafts (because they're easy to compute) but rarely carry theoretical weight. Question every composite in a table.
@@ -869,6 +915,13 @@ Typical contents:
 - Cross-reference to Data Availability Statement.
 
 For blind submission, also anonymize document properties (`dc:creator`, `cp:lastModifiedBy` in docx metadata). No author info, no acknowledgments, no funding mentions in the manuscript itself.
+
+Author identity hides in MORE docx members than `dc:creator` / `cp:lastModifiedBy`. Before a blind submission, scrub ALL of:
+- `docProps/core.xml` — `dc:creator`, `cp:lastModifiedBy`.
+- `word/people.xml` — the comment-author registry; it stores each commenter's display name AND often their email / tenant userId (`w15:userId="S::name@univ.ac.kr::..."`). A file literally named `..._anonymised.docx` routinely still leaks the author here.
+- `word/comments.xml` (+ `commentsExtended/Ids/Extensible.xml`) — the comment bodies and their `w:author`.
+- `docProps/app.xml` — `Company`, `Manager`.
+Once the author's memos are resolved, REMOVE the comments entirely (the `commentRangeStart/End` + `commentReference` markers in `document.xml`, and strip the comment parts), then grep every ZIP member for the surname, given name, email, and institution to confirm zero hits. Leave the (non-blind) title page untouched.
 
 ## 8.3 Data availability statement
 
@@ -978,6 +1031,32 @@ When the user makes manual edits + adds memos:
 - After resolution, save as `v(N+1).docx`.
 
 Keep both files until the user confirms the resolution is complete.
+
+### 9.5b Italic variable-name runs split a sentence; edit per-run, never rebuild across italics
+
+In an empirical paper, italicised variable names (lnRnd, priorAlliance, KnowledgeSimilarity) break a paragraph into many runs. A plain-text substring that spans an italic boundary (e.g. "(62.0 per cent of panel observations)" sitting on either side of an italic token, or "crosses the ten per cent threshold" next to an italic var) lives in NO single run, so a run-level `old in run.text` search fails.
+- Do NOT fall back to rebuilding the whole paragraph (concatenate text, wipe it into run[0]): that DESTROYS the italic formatting of every variable name in the paragraph.
+- Instead: (i) target the shortest token that lives inside one run ("crosses" -> "clears", not the whole clause); or (ii) replace per-run, iterating runs with run.text = run.text.replace(old, new) and asserting the total replacement count equals what you expect (catches both 0-hits and accidental extra hits, e.g. when "62.0" must change in two places but not a third).
+- Beware substring collisions inside a word: replacing the bare token "on" also hits "c(on)centrates". When a word is its own run, match run.text == exact_old and assign, rather than a substring replace.
+- Headings can be fully italic and split mid-phrase ("...concentrates " | "on" | " partial..."), so the same per-run discipline applies outside body paragraphs.
+- Build the apply script fail-safe: collect a status per edit and save() ONLY if zero failures, so a single bad anchor never leaves the file half-edited. Back up the docx before each stage.
+
+## 9.6 Never round-trip the LIVE docx through Word (silent content loss)
+
+Converting a docx to PDF with a Word-backed tool (`docx2pdf`, Word COM) can make Word silently "repair" the file and DROP content — in one session it deleted the entire Disclosure / Data-availability block (four contiguous paragraphs) with no error. python-docx output (slightly non-canonical XML) is especially prone.
+- NEVER convert the working/live docx in place. Copy it to a scratch path and convert the COPY.
+- After ANY Word round-trip, or any large structural edit, re-verify content survived: paragraph count vs a known-good backup, presence of every section heading + the Disclosure / Data-availability block, and table/image/reference counts.
+- Keep a timestamped backup before each edit stage so a paragraph-list diff (old vs new) instantly surfaces any unintended deletion.
+- Diagnostic: a plain python-docx load+save round-trip does NOT lose content, so if content vanished, suspect the Word/PDF step, not your edit script.
+
+## 9.7 Final review as a multi-round adversarial loop until convergence
+
+For a "read it five more times" final pass, run a fan-out review workflow repeatedly, not once.
+- Each round = one reader per section (sentence by sentence) PLUS cross-cutting lenses (numbers; cross-references; citations vs reference list; British-spelling/typography), then an ADVERSARIAL verify stage in which a separate agent must confirm each finding is verbatim, real (not taste), safe (preserves every number/citation/defined term, British spelling, no em-dash), and introduces no new error. Default the verifier to REJECT taste-only rewrites.
+- Re-dump the docx to a fresh text file BETWEEN rounds so the next round sees the applied edits.
+- Feed SETTLED decisions back into the next round's context so it stops re-flagging them (an intentionally open title, table-cell minus glyphs, a deliberately DOI-free reference list, an arithmetic-mean base the author confirmed). Otherwise every round re-surfaces the same non-issues and buries the real ones.
+- Stop when a round yields only taste-level or already-settled items. Expect the count to fall but not monotonically (each fresh read finds different polish): one real session ran 28 -> 17 -> 12 -> 16 -> 8 -> 6.
+- Genuine errors hide until late: an impossible variance and a "not X nor Y" correlative surfaced only in rounds 4 and 6. The extra passes earn their cost.
 
 ---
 
