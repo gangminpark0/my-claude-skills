@@ -1041,13 +1041,17 @@ In an empirical paper, italicised variable names (lnRnd, priorAlliance, Knowledg
 - Headings can be fully italic and split mid-phrase ("...concentrates " | "on" | " partial..."), so the same per-run discipline applies outside body paragraphs.
 - Build the apply script fail-safe: collect a status per edit and save() ONLY if zero failures, so a single bad anchor never leaves the file half-edited. Back up the docx before each stage.
 
-## 9.6 Never round-trip the LIVE docx through Word (silent content loss)
+## 9.6 The docx has another writer: never assume single-writer access
 
-Converting a docx to PDF with a Word-backed tool (`docx2pdf`, Word COM) can make Word silently "repair" the file and DROP content — in one session it deleted the entire Disclosure / Data-availability block (four contiguous paragraphs) with no error. python-docx output (slightly non-canonical XML) is especially prone.
-- NEVER convert the working/live docx in place. Copy it to a scratch path and convert the COPY.
-- After ANY Word round-trip, or any large structural edit, re-verify content survived: paragraph count vs a known-good backup, presence of every section heading + the Disclosure / Data-availability block, and table/image/reference counts.
-- Keep a timestamped backup before each edit stage so a paragraph-list diff (old vs new) instantly surfaces any unintended deletion.
-- Diagnostic: a plain python-docx load+save round-trip does NOT lose content, so if content vanished, suspect the Word/PDF step, not your edit script.
+The human collaborator usually keeps the manuscript OPEN in Word and edits it intermittently WHILE you are editing it programmatically (python-docx). The two writers then collide: whichever side saves last silently overwrites the other's work — your python-docx save can wipe the human's in-Word edits, and a later Word save can wipe an entire batch of your fixes. In one session a four-paragraph block (Disclosure / Data-availability) vanished exactly this way; the cause was concurrent Word editing, not the edit script. (Author's own words: "그건 내가 중간중간 Word를 수정해서 그래.")
+
+Treat the file as shared, single-writer:
+- RE-READ the live file at the start of every edit batch — never trust an in-memory `Document` loaded earlier. Verify paragraph / section / table / image counts against the last known-good state; a mismatch means someone else wrote to it, so reconcile before editing.
+- Check for the `~$<name>.docx` lock file: its presence means the file is open in Word RIGHT NOW. Ask the human to close Word (or pause) before you run a batch, and tell them when you are done so they can resume. Warn them that saving from a stale Word window will discard your latest edits.
+- Keep a timestamped backup before every stage so a paragraph-list diff (old vs new) instantly shows what changed and lets you recover an overwritten block.
+
+Separately (a related but distinct trap): converting a docx to PDF with a Word-backed tool (`docx2pdf`, Word COM) can make Word "repair" slightly non-canonical python-docx XML and drop content. Convert a COPY, never the live file, and re-verify counts after any Word round-trip.
+- Diagnostic: a plain python-docx load+save round-trip does NOT lose content. If content vanished, suspect an external Word write (or a Word/PDF step), not your edit script.
 
 ## 9.7 Final review as a multi-round adversarial loop until convergence
 
