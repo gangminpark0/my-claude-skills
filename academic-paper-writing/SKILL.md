@@ -836,6 +836,63 @@ A late "numbers" pass should recompute each headline figure from the values the 
 - **Respect log vs level (Jensen's inequality).** When a count is modelled as ln(1 + count), do NOT "correct" a stated average count to exp(mean of logs) - 1. The arithmetic mean of counts is strictly larger than that back-transform, so a base like "about three patents" can be right even though exp(1.124) - 1 is about 2. If the subsample's arithmetic mean is not reported, FLAG it for the author to confirm rather than silently changing it toward a lower bound.
 - A figure that cannot be reproduced from any reported number is a FLAG, not an automatic edit: ask the author, or change it only when one resolution is unambiguous (matches the table) and the alternative is mathematically impossible.
 
+### 7.3d Main-table architecture: one wide table whose columns get progressively stricter
+
+The default results architecture in empirical management and finance journals is **one main regression table, read left to right from the least to the most demanding specification**, with everything else demoted to robustness. A results section built as a long tidy table (one row per model, columns `Outcome | Specification | Coefficient | SE | 95% CI | p | q | N`) is a machine-readable grid, not a journal table, and reviewers read it as an unfinished specification dump.
+
+Convert to the column layout:
+
+- **Rows are variables**, in the order: variable of interest first, then controls, in the same order they enter the model.
+- **Columns are models**, headed `(1)`, `(2)`, `(3)` with a one-line spec label under the number (the outcome name, or the estimator).
+- Columns move **baseline → richer**: e.g. (1) firm + year FE, (2) firm + industry×year FE, (3) + lagged controls. When there are two outcomes, run the same three columns twice: (1)-(3) outcome A, (4)-(6) outcome B. The reader then sees attenuation across a row instead of hunting across a stack of separate tables.
+- **A rule separates the estimates from the specification block** beneath: FE indicators (`Yes`/`No` per column), a controls indicator, Observations, number of firms/clusters, Within R², and R² including the fixed effects. Everything a referee checks first lives in that block.
+
+Everything that is not the main model — alternative horizons, alternative samples, alternative outcome constructions, multiplicity adjustment, exposure/denominator variants, sector cuts, deduplication — moves into a single robustness section that names, in its opening sentence, the list of design choices it varies and in what order. The paragraphs then follow that order exactly.
+
+User signal: "메인 모델이 위로 올라가고 거기에 추가되는 main table이 나와야 해. 나머지는 robustness로 넘어가는 거고."
+
+The supporting main tables run in the reference order before the regression table: sample construction / observation flow → summary statistics → correlation matrix → construct composition (if the paper builds a measure) → main regression → any head-to-head comparison of alternative measures. **If the paper has no summary-statistics table and no correlation matrix, that is a finding, not a style choice** — a referee will ask for both, and the correlation matrix usually earns its place by justifying a control (e.g. treatment correlates .60 with the denominator control) or by motivating a direct coefficient test (e.g. two outcomes correlate .76, so a difference between their coefficients has to be tested, not eyeballed across two regressions).
+
+### 7.3e p-value reporting: stars in the main table, exact values in its appendix twin
+
+The convention these journals actually use is **coefficient with significance markers, standard error in parentheses directly beneath**, and the thresholds defined in the note (`*** p < 0.01, ** p < 0.05, * p < 0.10`). Not the coefficient alone, not a p-value column, not a bare CI column.
+
+```
+ESG vacancy demand      0.0157**        0.0086          0.0071
+                        (0.0075)        (0.0069)        (0.0065)
+```
+
+A paper that has principled reasons to distrust stars (exploratory design, multiplicity, small cluster counts) does **not** solve the problem by refusing the convention — that just makes the main table unreadable. Report both, in two places:
+
+- **Main table:** stars + SE, so the pattern is legible at a glance.
+- **Appendix twin table, same estimates:** coefficient, SE, 95% CI, exact p-value, and the multiplicity-adjusted q-value. Caption it as such ("Main specifications with exact p-values and intervals") and point to it from the main table's paragraph.
+
+Then say once, in the methods, what the paper leans on: *the main tables mark conventional significance so they can be read at a glance, every marked estimate is repeated in the appendix with its interval and exact p-value, and no conclusion rests on a star.* That keeps §5.6 significance-threshold honesty intact while still giving the reader the table shape they expect. See §5.6 and §6.2 for how to describe marginal results in the prose.
+
+### 7.3f Three-line format, and the DOCX traps that silently break it
+
+The three-line academic table is: a rule above the header row, a rule under the header row, a rule under the last row, **no vertical rules and no interior horizontal rules** — with one exception, a single rule marking a panel break or the start of the specification block. Caption above the table (`**Table N.** Title`, label bold, title not), small flush-left `Note.` paragraph below, table centred, one font throughout.
+
+Traps that produce a table which passes visual inspection at small size but is wrong:
+
+- **The body first-line indent leaks into cells and captions.** Table cell paragraphs, captions, and notes inherit the Normal style's `first_line_indent`. The caption drifts off centre and a narrow column force-breaks a word mid-token (`Hori` / `zon`). Reset first-line, left, and right indent on every generated paragraph.
+- **Theme fonts silently override the font you set.** In WordprocessingML a `w:asciiTheme` attribute beats the explicit `w:ascii` name that python-docx writes, so `Heading 1`, `Heading 2`, `Caption`, and `Title` keep rendering in the theme font. Delete the `asciiTheme`/`hAnsiTheme`/`eastAsiaTheme`/`cstheme` attributes after setting a style's font.
+- **A declared font Word cannot bind falls back silently.** Variable fonts (e.g. STIX Two Text) are not bindable by Word; every table and caption renders in the theme fallback instead. Verify by exporting to PDF and reading back the span font names — do not trust the DOCX declaration.
+- **Cell padding written as `w:start`/`w:end` is ignored**; Word honours `w:left`/`w:right`.
+- **Column widths from character counts do not bound the longest unbreakable word.** Derive widths from measured glyph advances (PIL `ImageFont.getlength` on the actual TTF), take the largest font size at which every token still fits, and treat hyphen/slash as break opportunities. For a two-line cell (`coef***` over `(SE)`), measure each line separately.
+- **Decimals belong to the column, not the value.** Deciding per value prints `1` next to `0.0571`. Fix four decimals for the column; widen only when the column's typical magnitude is below 0.001 (a standard-deviation column of `0.0002` carries one significant digit), and use the integer dtype — not "max value ≥ 2" — to decide that a horizon column of 0/1 is an index, not a share.
+- **Default `Title` style is blue with a rule under it.** Set the colour to black and remove the paragraph border.
+- Use the typographic minus (U+2212) for negative numbers so the tables match the body prose. Korean sans fonts (Malgun Gothic) have no U+2212 glyph — in figure labels drawn with matplotlib, fall back to the hyphen there.
+
+### 7.3g Generate display tables from the estimator, with a full-estimates audit file
+
+Build the main table with a script that **re-runs the estimator and emits both the display table and a long-format file with every coefficient, SE, p-value, N, and R² it used**. Two consequences worth the effort:
+
+- The main table and the robustness tables cannot drift apart, because they come from one estimation path. Reproducing the existing published numbers exactly (to the last digit) is the acceptance test for the new script.
+- The audit file makes every cell traceable, and it is what you check the prose against: extract each coefficient the text attributes to a column and assert it equals the table cell.
+
+A statistic that applies to all columns at once (a joint equality test across four measures) has no cell to live in — a row can only be written into the first column, where it misreads as belonging to that column. **Put it in the note**, not in a row.
+
 ## 7.4 Bundle / composite-index skepticism
 
 Composite indices and bundles often appear in early drafts (because they're easy to compute) but rarely carry theoretical weight. Question every composite in a table.
@@ -857,6 +914,10 @@ When asked to match the format of a related paper, inspect the reference paper's
 - Section ordering.
 - Hypothesis-statement format.
 - Citation density.
+
+**Extract the format mechanically, do not eyeball it.** Open the reference DOCX and dump, per table: style name, alignment, autofit, grid widths, table-level borders, per-cell borders, cell margins, vertical alignment, header run font/size/bold, and the paragraphs immediately before and after (which tell you whether the caption sits above and the note below). Render the reference PDF alongside it and read back the span fonts and sizes — the declared font and the rendered font differ more often than not (§7.3f). Then encode the extracted format once, in the generator, and add an audit script that re-checks it on every build so a later edit cannot quietly undo it.
+
+The realized format, not the declared one, is the target: if the reference's own PDF renders its tables in the body font because its declared table font never bound, match the body font.
 
 User signal: "[reference paper]과 모양 맞추고."
 
