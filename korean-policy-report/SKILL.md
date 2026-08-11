@@ -256,6 +256,13 @@ description: Conventions for drafting, revising, and verifying Korean-language p
 - 변수명이 본문에서 영어로 제시된 경우, 표에서도 동일 표기를 사용함 (예: `priorAlliance`, `PostMna`). 본문 중 변수명은 필요 시 이탤릭으로 일반 명사와 구분함.
 - 표가 너무 작아지면 열을 줄이거나 표를 나누되, 본문 논리를 해치지 않게 함.
 
+배치·쪽 나눔 규칙(엄수):
+
+- 모든 표는 그 표를 설명하는 본문 문단 **뒤에** 배치함. 본문에 언급이 없으면 직전 문단 끝에 `(<표 N> 참조)`를 붙임. 같은 문단에 여러 참조가 붙으면 `(<표 N>, <그림 M> 참조)`로 병합함.
+- 언급 존재 여부를 검사할 때 `표 1`이 `표 10`·`표 11`에 부분 매칭되지 않게 숫자 경계를 확인함.
+- 쪽(장)을 넘는 긴 표는 잘려도 되지만, **글자처럼 취급을 해제해야** 나뉨. HWPX 기준: `hp:tbl`에 `treatAsChar="0"` + `textWrap="TOP_AND_BOTTOM"` + `pageBreak="CELL"` + `repeatHeader="1"`, 그리고 머리행 셀(`hp:tc`)에 `header="1"`. 셀에 `header="1"`을 빠뜨리면 repeatHeader가 있어도 다음 쪽에 머리행이 반복되지 않음.
+- 표 캡션 문단은 keepWithNext를 켜서 표와 같은 쪽에 묶음(캡션만 쪽 하단에 남는 고아 캡션 방지).
+
 글꼴 기준:
 
 - 표 제목: 11pt 수준
@@ -274,6 +281,8 @@ description: Conventions for drafting, revising, and verifying Korean-language p
 - 그림 제목과 축 제목은 짧고 명확해야 함.
 - 그림이 페이지 경계나 본문 텍스트와 겹치지 않는지 PDF로 확인함.
 - 그림은 "예쁜 장식"이 아니라 본문 주장에 직접 기여해야 함.
+- 모든 그림은 그 그림을 설명하는 본문 문단 **뒤에** 배치함. 언급이 없으면 직전 문단 끝에 `(<그림 N> 참조)`를 붙임(표 규칙과 동일).
+- 그림 캡션 문단은 keepWithNext를 켜서 그림과 같은 쪽에 묶음.
 
 ---
 
@@ -353,6 +362,17 @@ HWPX는 ZIP 기반 XML 문서이므로 구조 무결성이 중요함. HWP 바이
 - 이미지 파일이 누락되지 않았는가
 - 표와 그림 번호가 순차적인가
 - 빨간색 수정 표시가 필요한 곳에 남아 있는가 (검토본의 경우)
+
+발주처 양식(HWP) 파일에 맞춰 재조판할 때(엄수):
+
+- 양식 HWP를 한컴 COM으로 HWPX로 변환한 뒤 header.xml의 명명 스타일(예: KIET `K_` 스타일셋)의 charPr/paraPr/borderFill **ID를 그대로 참조**해 본문을 생성함. 새 paraPr 추가는 개조식 들여쓰기 등 양식에 없는 계층에만 최소로 함.
+- 글꼴·크기·자간·장평·줄간격·들여쓰기·여백·쪽번호 위치는 양식 XML의 수치를 실측해 쓰고, 눈대중으로 만들지 않음.
+- 각주는 괄호 텍스트가 아니라 **실제 각주 개체**(`hp:footNote` + `hp:autoNum`, secPr의 `footNotePr` 번호형식)로 넣고, 변환 후 각주 번호·하단 구분선·본문 위첨자 위치를 PDF에서 확인함.
+- 섹션을 삭제·추가하면 header.xml의 `secCnt`, `content.hpf`(manifest·spine), `META-INF/container.rdf`를 **모두 일치**시켜야 함. 하나라도 참조가 어긋나면 한컴이 파일 열기를 거부함(오류 메시지 없이 Open이 False를 반환).
+- 한컴은 COM으로 열어 저장할 때 문단을 재조판하므로 lineseg는 근사값이면 충분함. 실제 줄바꿈은 paraPr의 `breakSetting`이 지배함.
+- 개조식 본문·긴 CPC 코드·URL·파일경로가 있는 문단은 `breakLatinWord`와 `breakNonLatinWord`를 **모두 `BREAK_WORD`(글자 단위)** 로 함. `KEEP_WORD`(어절 유지)는 양쪽정렬과 만나면 긴 토큰이 한 줄을 통째로 차지하며 낱글자 자간으로 벌어지고, 라틴 `HYPHENATION`은 URL 도메인 중간에 하이픈을 삽입해(예: `wip-o.int`) 주소를 오독하게 만듦.
+- 렌더링 PDF의 글꼴 목록을 확인함: 대상 글꼴(KoPub 등)이 설치되지 않은 PC에서는 한컴이 대체 글꼴로 PDF를 만들므로, 양식 준수 여부는 파일의 fontRef가 양식과 동일한지로 판단하고, 대체 렌더링 사실을 산출물 설명에 남김.
+- PowerShell에서 `[기본과제]…`처럼 대괄호가 든 파일명은 와일드카드로 해석되어 복사·이동이 조용히 실패함 — 반드시 `-LiteralPath`를 사용함.
 
 ---
 
