@@ -369,6 +369,9 @@ HWPX는 ZIP 기반 XML 문서이므로 구조 무결성이 중요함. HWP 바이
 - 글꼴·크기·자간·장평·줄간격·들여쓰기·여백·쪽번호 위치는 양식 XML의 수치를 실측해 쓰고, 눈대중으로 만들지 않음.
 - 각주는 괄호 텍스트가 아니라 **실제 각주 개체**(`hp:footNote` + `hp:autoNum`, secPr의 `footNotePr` 번호형식)로 넣고, 변환 후 각주 번호·하단 구분선·본문 위첨자 위치를 PDF에서 확인함.
 - 섹션을 삭제·추가하면 header.xml의 `secCnt`, `content.hpf`(manifest·spine), `META-INF/container.rdf`를 **모두 일치**시켜야 함. 하나라도 참조가 어긋나면 한컴이 파일 열기를 거부함(오류 메시지 없이 Open이 False를 반환).
+- header.xml에 charPr/paraPr를 추가할 때 한컴은 참조(`paraPrIDRef` 등)를 **id 속성이 아니라 목록의 순번(0-based 위치)** 으로 해석함. 새 항목은 반드시 목록 끝에 id 오름차순으로 붙여 **id == 순번**을 유지해야 함. 중간 순서가 어긋나면 열리기는 하지만 엉뚱한 문단모양(예: 캡션용 가운데 정렬)이 적용됨.
+- 표 캡션은 별도 문단보다 표 개체 안의 `<hp:caption side="TOP">`으로 부착하는 편이 안전함 — 표가 다음 쪽으로 밀려도 캡션이 함께 이동해 고아 캡션이 원천 차단됨(한컴이 스키마를 정상 수용, 위치는 outMargin과 inMargin 사이).
+- 숫자(`14,500`)가 줄 경계에서 갈라지면 오독 위험이 있으므로, 일반 문단은 `breakLatinWord="KEEP_WORD"`로 두고 URL·CPC 코드열 등 **긴 라틴 연속열(약 16자 초과)이 있는 문단만** `BREAK_WORD` 문단모양을 쓰는 이원화가 필요함. 자동 부가하는 참조구는 `(<표 N> 참조)`의 공백을 NBSP로 넣어 분리를 막음.
 - 한컴은 COM으로 열어 저장할 때 문단을 재조판하므로 lineseg는 근사값이면 충분함. 실제 줄바꿈은 paraPr의 `breakSetting`이 지배함.
 - 개조식 본문·긴 CPC 코드·URL·파일경로가 있는 문단은 `breakLatinWord`와 `breakNonLatinWord`를 **모두 `BREAK_WORD`(글자 단위)** 로 함. `KEEP_WORD`(어절 유지)는 양쪽정렬과 만나면 긴 토큰이 한 줄을 통째로 차지하며 낱글자 자간으로 벌어지고, 라틴 `HYPHENATION`은 URL 도메인 중간에 하이픈을 삽입해(예: `wip-o.int`) 주소를 오독하게 만듦.
 - 렌더링 PDF의 글꼴 목록을 확인함: 대상 글꼴(KoPub 등)이 설치되지 않은 PC에서는 한컴이 대체 글꼴로 PDF를 만들므로, 양식 준수 여부는 파일의 fontRef가 양식과 동일한지로 판단하고, 대체 렌더링 사실을 산출물 설명에 남김.
