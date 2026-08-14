@@ -227,6 +227,18 @@ When the theory section is organized one-subsection-per-hypothesis (§2.2 = H1, 
 
 User signals: "2.2는 H1 설명 섹션인데 H2, H3 얘기가 들어있다 — 다 지워"; "2에서는 분석 데이터(예: SDC) 얘긴 하면 안돼."
 
+### 2.4f Post-exploratory papers: competing hypotheses + transparency statement, never a reversed hypothesis
+
+When a paper is built on data that was already explored (a second paper from an archived candidate analysis, a null that became the headline), the HARKing guardrails are:
+
+- **Never reverse a failed prediction.** If the original documented hypothesis predicted positive and the data returned null, do NOT restate it as "we predicted no effect." That is textbook HARKing and it is checkable against the archive.
+- **Competing-hypotheses device.** Where two theoretical logics genuinely existed ex ante (e.g., augmentation predicts a positive stage-matched effect; verification-burden/security-constraint logic predicts null), state them as competing predictions (H3-a vs H3-b) and let the data adjudicate. This is honest AND more interesting than a single-direction hypothesis.
+- **Research-transparency statement** in the methods: one paragraph disclosing (i) hypotheses that were pre-specified in a documented internal analysis plan before estimation, (ii) which framing was elaborated after seeing exploratory results, (iii) that all pre-specified tests are reported regardless of outcome and none was removed or reversed. A provenance archive (candidate-generation history) is what makes this paragraph defensible.
+- Supported original hypotheses can be presented as-is when a documented pre-estimation record exists; the interesting null carries the discussion, not a retrofitted prediction.
+- The fully honest upgrade path is a new confirmatory study (new data wave, pre-registered); when that is out of scope, an interpretive qualitative study (member checking, mechanism adjudication) can carry the "why" question but must not be called confirmation.
+
+User signal: "가설을 재밌게 바꿔도 되는지" — the answer is: reframe and compete, never reverse.
+
 ## 2.5 Hypothesis statement format
 
 - One- or two-sentence declarative statements.
@@ -286,6 +298,17 @@ Heuristic: if the head could caption a step in a processing pipeline ("...classi
 This is the methods-section counterpart of §2.9a (further-analysis headings preview the result).
 
 User signal: "이렇게 달지말고 결과적으로 우리가 뭘 만드는지 목적에 맞는 소제목을 다는게 좋겠어. 이거는 지금 작업할때 한 얘기같은 소제목이자나."
+
+### 2.6b Small-N qualitative components in mixed-methods papers
+
+For an explanatory sequential design whose qualitative arm is a handful of interviews (3-5), the defensible framing stack is:
+
+- **Name the role precisely**: interpretive triangulation / member checking / mechanism adjudication — never "confirmation," never a saturation claim. Result language caps at "consistent with."
+- **Sample adequacy via information power** (Malterud et al. 2016), not saturation: narrow aim + population already characterized by the survey + theory-guided interviews all raise information power.
+- **Theoretical purposive sampling matrix**: each informant profile tests a different face of the argument (the null's protagonist, the boundary condition, the beneficiary, the limit case, the rival-explanation holder). A "why 5?" reviewer question is answered by the matrix, not the count.
+- **Structure each interview** as workflow walk-through → critical incidents (most recent success AND most recent abandonment) → member checking with the quantitative pattern shown on one page.
+- **Re-contact consent check**: survey contact info collected "for prize fulfillment, destroyed after" CANNOT be used to recruit interviewees; recruit fresh from the same population, and keep the population definition identical to the survey's (a broader institute family is a population mismatch reviewers will catch).
+- **Secondary use of qualitative data** (open-ended survey text already used in a companion paper): disclose the first use explicitly (salami-slicing defense), recode with the new paper's lens rather than re-reporting old codes, and reconcile count definitions in print (e.g., "171 non-empty fields, 149 substantive after removing placeholder entries" — the companion paper's count and yours must be derivable from each other).
 
 ## 2.7 Results section — deductive structure
 
@@ -517,6 +540,8 @@ AI-assisted drafts can contain plausible-but-FABRICATED references, or real work
 - Highest fabrication risk: very recent / forthcoming items (last 1-2 years) and the volume/issue/page numbers.
 - **Online-first vs volume year.** A work cited with full volume/issue/pages must carry the YEAR OF THAT VOLUME, not the earlier online-first year (an article printed in Vol 34(1) of 2023 is "2023" even if it appeared online in 2021). If you change the year, change every in-text citation too.
 - Orphan check both ways: every in-text (Author, year) has a list entry, and every list entry is cited at least once. Dropping a vignette or a merged section can orphan its only citation — then delete that reference as well.
+- **Retraction / withdrawal check.** A topically perfect, widely circulated paper can be WITHDRAWN (e.g., the MIT "AI, Scientific Discovery, and Product Innovation" working paper, disavowed 2025 for data integrity). Search "[title] retracted OR withdrawn" for every load-bearing reference; a retracted citation is worse than a missing one.
+- **Fan-out collection pattern.** For a new paper's reference base, launch parallel search agents by theme cluster (theory anchors / empirical evidence / mechanism / context / methods), each instructed to verify every item against publisher pages or Crossref and to return structured records (title, authors, year, venue, DOI, OA-PDF link, 2-sentence claims summary, 1-sentence relevance). Duplicates surfacing across independent clusters are a signal of core references, not an error. Then curate to ~30 by argument-strength, with each entry's role in the paper written down.
 
 ---
 
@@ -730,6 +755,15 @@ Add citations from the field's leading exemplars for each control type.
 
 User signal: "controls를 설명하는 부분에는 참고문헌이 이것밖에 없는건 이상하니..."
 
+## 5.12 Stable citation keys in source files; numeric order assigned at build
+
+For numbered-citation journals (IEEE and similar), do NOT hand-number citations in the source manuscript. Instead:
+
+- Source md/text files cite with stable keys (`[R07]`, `[R23]`) that never change.
+- The docx generator maps keys to numbers by FIRST APPEARANCE in reading order, emits `[n]` in text, and writes the reference list in that order from a single reference dictionary inside the generator.
+- The audit asserts: used keys == defined keys (both directions), numbers span 1..N with no gaps, and the printed list is ordered 1..N.
+- Reordering sections or adding a citation then costs one rebuild, not a manual renumbering cascade (the numbered-citation analogue of §7.3b).
+
 ---
 
 # PART 6 — Robustness and honest framing
@@ -899,6 +933,15 @@ Build the main table with a script that **re-runs the estimator and emits both t
 - The audit file makes every cell traceable, and it is what you check the prose against: extract each coefficient the text attributes to a column and assert it equals the table cell.
 
 A statistic that applies to all columns at once (a joint equality test across four measures) has no cell to live in — a row can only be written into the first column, where it misreads as belonging to that column. **Put it in the note**, not in a row.
+
+### 7.3h Render-verification loop, page-spanning tables, and p-value cell format
+
+- **Verify the render, not the declaration, without opening Word**: convert a COPY of the docx to PDF (docx2pdf; never the live file, §9.6), rasterize the pages containing tables (PyMuPDF `get_pixmap`), and visually inspect the images. This catches what structural audits cannot: cramped first columns wrapping labels onto three lines, tables split across pages, wrong caption placement. Also read back the PDF's embedded font list — it is the ground truth for §7.3f font binding.
+- **Page-spanning tables repeat the header row**: set `w:tblHeader` on the first row of every numbered table. A correlation matrix that breaks across pages without a repeated header is unreadable.
+- **Default column widths**: wide first column for row labels (≈4.2 cm at ≤6 columns, ≈3.4 cm for wider tables), equal split for the rest. Auto-fit equal widths is what causes the three-line label wrap.
+- **"R2" renders as R + superscript 2** — build the superscript run in the generator; a literal "R2" in a stub row survives every text-level audit.
+- **p-value cells never print ".000"**: format as "< .001" below .0005. A ".000" cell in an exact-p appendix table contradicts the table's own purpose.
+- **Exact-p appendix twin (§7.3e) is generated from the same lock file** as the starred main table, so the two cannot disagree.
 
 ## 7.4 Bundle / composite-index skepticism
 
