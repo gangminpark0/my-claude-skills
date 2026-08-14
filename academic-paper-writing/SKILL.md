@@ -574,14 +574,21 @@ When revising AI-generated or AI-assisted prose, watch for and remove:
 
 User signal: "AI가 쓴 것 같은 문장 다듬어" / "갑작스러운 bold 삭제."
 
-## 4.4 No mathematical notation in body prose
+## 4.4 Mathematical notation in body prose — use it, define it, keep it consistent
 
-Do NOT write formal notation like `X_i = 1[∃ past job with signal]` in body paragraphs. Use prose:
-> "X is an indicator that equals one when the worker's career history contains at least one job classified with the relevant signal."
+**CORRECTED 2026-08-15.** An earlier version of this section prohibited notation in body prose. The author explicitly reversed that: "본문에는 수학 표기를 해야되." Methods prose SHOULD use mathematical notation where it makes definitions precise and compact. Do not "clean up" defined notation into words.
 
-Reserve formal notation for **equation blocks only** (between equation and "where..." paragraph). In body prose, write the same content as natural English.
+What good notation use looks like:
+- Define symbols at first use in prose: "Let P be all observed active profiles, H the Hybrid count, S the Specialist count, ..."
+- Formulas built from defined symbols are welcome in running text: "The AI workforce share is (H + S)/P", "Hybrid-tilted (High) when H exceeds S", "capability = Hybrid + Specialist".
+- Division slashes inside formulas ("Explore/(Explore + Exploit)") are formulas, NOT the §4.1a slash-pair composite-name pattern; leave them alone.
+- Keep prose symbols consistent with the tables and equation blocks that use them (construct-definition table, appendix algebra table, estimating equations). A symbol used in prose must be defined before use, or in an adjacent labeled table.
 
-In hypothesis statements: NEVER use ×, ≥, ≤, ∈. Use prose equivalents.
+Boundaries that still hold:
+- Hypothesis STATEMENTS stay in prose: no ×, ≥, ≤, ∈ inside the hypothesis sentence itself (§2.5); the mathematical specification lives in the methods section.
+- Equation blocks still get a "where X is ..., Y is ..." explanation paragraph (§2.6).
+
+User signal: "본문에는 수학 표기를 해야되" (notation belongs in the body — do not strip it).
 
 ## 4.5 Forward-reference discipline
 
