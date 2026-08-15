@@ -139,6 +139,9 @@ User signal: "혹시 컨텍스트창 끊길것 같으면 압축하고 먼저 압
 - Use numbered hypothesis labels (H1, H2, P1, P2).
 - Report specific coefficients, p-values, or sample sizes.
 - Forward-reference sections ("developed in Section X.Y").
+- Close on a defensive retreat. Scope caveats ("These associations do not identify causal effects", "though sparse capacity limits the test") must NOT be the abstract's closing move — the abstract closes on substantive content: the contribution, the mechanism, or the thesis (e.g., "That composition accumulates slowly through careers, making it hard for competitors to replicate."). Scope caveats live in the methods and limitations sections; if one is truly essential in the abstract, fold it into a mid-abstract clause, never the final sentence.
+
+User signal: "지금 물러서는 defensive한거 말고 다른 중요한 내용을 넣는게 좋겠어."
 
 ## 2.3 Introduction
 
@@ -629,6 +632,32 @@ Cross-references are fine in Methods, Results, Robustness — where they help th
 Italicize variable names, regression terms, and short code-like tokens when they appear in body prose: *X_imp*, *log_ppent*, *bg_x_hybrid*.
 
 Tables, footers, and equation blocks have their own conventions; italicize variables in body prose.
+
+## 4.6a No stage-direction prose addressed at the reviewer
+
+Do not write sentences that narrate the paper's own honesty or tell the reader how to weigh the evidence — "stage directions" performed for the reviewer. The content stays; the performance goes. Sweep for these before submission and after any caveat-heavy revision round (caveating passes breed them).
+
+Real removals (before → after):
+- "Three qualifications keep this reading honest." → "Three qualifications apply."
+- "Two diagnostics bound the reading." → delete the sentence; the diagnostics that follow speak for themselves.
+- "...and we state the boundary rather than average over it." → end the sentence before the clause.
+- "...which is itself informative: [content]" → drop the clause, keep the content.
+- "The contrast is informative: vacancy demand is a flow..." → "Vacancy demand is a flow..."
+- "The signature still disciplines interpretation: it gives no support to..." → "They still give no support to..."
+- "...within limits the design makes explicit." → name the actual limit ("though its reach is bounded by sparse Translator capacity").
+- "Exception rows are reported as named exceptions." (table note) → delete.
+- "carries named exceptions" / "robust with named exceptions" → "has exceptions" / "robust with exceptions".
+- "so we read them side by side: [content]" / "we read the evidence as X" → state the content directly ("the evidence is X").
+
+KEEP statements that look similar but carry substance:
+- Claim-scope statements: "we do not claim the fine-industry comparison."
+- Data properties: "zero is an informative feature of the measured workforce."
+- Design function: "the matched design keeps them apart"; "matching holds scale fixed by construction."
+- Test properties: "the test bounds the alternative rather than settles it."
+
+The test: if the sentence performs how careful or honest the paper is being, delete or convert it; if it states what is claimed, measured, or bounded, keep it.
+
+User signal: "리뷰어에게 말을거는 무대지시문 같은거 빼줘."
 
 ## 4.7 No author-name branding for methods
 
