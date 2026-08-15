@@ -636,6 +636,27 @@ Do NOT brand your own paper's methods or variables with another author's name. F
 
 User signal: "이런식으로 쓰지말아줘. [author]-imputed 이런거."
 
+## 4.8 No reviewer-facing meta-commentary or authorial stage directions
+
+Manuscript prose describes the research, never the act of writing or reviewing it. This failure mode is bred by revision loops: each defensive fix tempts a sentence whose only audience is the referee. Keep the disclosure CONTENT; delete the meta-WRAPPER.
+
+| Meta-wrapper (delete) | Content (keep) |
+|---|---|
+| "we state this rather than omit it" | "No invitation denominator was recorded, so a response rate cannot be computed." |
+| "X deserves direct confrontation rather than a reviewer's discovery:" | "Two item-content proximities require direct testing:" |
+| "We state the interval's meaning precisely:" | "The interval excludes ..." |
+| "we state its reach honestly:" | (start with the substance) |
+| "we surface the discordance rather than let each section cite its convenient component" | "The two evidence strands do not point at the same component." |
+| "we describe their standing at zero order transparently:" | "At zero order, ..." |
+| "we use the language of support rather than confirmation throughout" | (just use it; don't announce it) |
+| "The verdict: H3-aug is not supported." | "H3-aug is therefore not supported." |
+
+Related bans already covered elsewhere: "It is important to note" (§4.3), work-log subsection heads (§2.6a). Adverbs of virtue — honestly, transparently, candidly, precisely — attached to reporting verbs are the telltale; so are contrast clauses about what a lazier author would have done ("rather than omit / rather than leave to a reviewer / rather than forcing one prediction"). First-person METHODOLOGICAL voice is fine ("we treat the scores as formative", "the stage mapping is ours"); first-person EDITORIAL voice is not.
+
+Add the ban list to the audit script as regex patterns so revision rounds cannot reintroduce them.
+
+User signal: "작업지시나 리뷰어는 몰라도 되는 문장들이 들어갈 필요는 없어."
+
 ---
 
 # PART 5 — Empirical conventions
