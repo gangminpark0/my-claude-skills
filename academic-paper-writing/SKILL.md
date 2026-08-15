@@ -254,6 +254,24 @@ User signal: "가설을 재밌게 바꿔도 되는지" — the answer is: refram
 
 Avoid academic-jargon-heavy phrasings. The reader should grasp the mechanism in one read.
 
+## 2.5a Research-question and hypothesis architecture
+
+How RQs and hypotheses are formed, ordered, and related — hammered out across one full paper session; apply as the default.
+
+**RQ form.** One interrogative sentence per RQ. No multi-barreled questions ("where does it create value, of what kind, at which stage, and where does it fail?" → "How does the perceived value researchers obtain from X vary across the stages of Y?"). No enumerated candidate lists inside the question — "(security, computing, verification, or capability)" belongs in the prose after the RQ, not in it. An RQ that presupposes a result ("Why does X fail to...?" before the null is shown) gets a neutral identification form instead ("Which constraints do researchers identify as binding...?").
+
+**Ordering.** ALL research questions precede ALL hypotheses. RQ1 is the overarching question the hypothesis set decomposes (it should mirror the paper's opening question in the Introduction); narrower RQs (mechanism, qualitative-strand questions) follow it immediately, then H1...Hn. Do not interleave an RQ between hypotheses even when it logically attaches to one of them — attach it in prose instead ("RQ2 supplies the constraint logic's evidence through...").
+
+**Hypothesis form is uniform.** Every hypothesis is a single declarative association/direction claim in the same grammatical shape ("X use at stage S is positively associated with Y, over and above Z"). Do NOT build a "competing-predictions hypothesis" that bundles two rival outcomes under one label (no H3-aug/H3-con sub-tokens — a reader meeting "aug/con" cold cannot parse them). The theoretically favored (and, in a disclosed-exploratory paper, the pre-specified) direction IS the hypothesis; the rival account lives in adjacent prose as "the rival explanation," with its evidence assigned to an RQ and its verdict language fixed in Results: "H3 is not supported; the observed signature is consistent with the [rival] logic," plus the post-hoc disclosure where applicable. This is also the honest alignment when the archived analysis plan pre-specified the positive direction.
+
+**Multi-part hypotheses split.** H4a and H4b are separately stated, each preceded by its OWN one-paragraph derivation (mechanism → consequence → ordering claim), separated by blank lines. Never pack "(H4a) ... (H4b) ..." into one statement paragraph.
+
+**Structure is shown, not narrated** (see §4.8): no "the overarching question is stated first," no "the hypotheses that follow decompose it," no "stated as a research question rather than a hypothesis." Headings, ordering, and labels carry all of that.
+
+**Audit hooks.** Encode as script checks: all RQ paragraph indices < all hypothesis indices; expected count of "Hypothesis "-prefixed statements; no banned sub-tokens (H3-aug etc.); RQ labels absent from abstract/intro.
+
+User signals: "rq가 좀 rq 스럽지 않네. 가설3번 좀 이상하고."; "모든 rq먼저"; "Aug con 이런건 뭔지 모르겠고"; "h4a, h4b처럼 두개의 가설로 되어있더라도 엔터쳐서 두개로 분리해주고 이에 대한 논리도 펴야지."
+
 ## 2.6 Methods section
 
 **Typical structure (adjust to field conventions):**
@@ -656,9 +674,9 @@ Manuscript prose describes the research, never the act of writing or reviewing i
 
 Related bans already covered elsewhere: "It is important to note" (§4.3), work-log subsection heads (§2.6a). Adverbs of virtue — honestly, transparently, candidly, precisely — attached to reporting verbs are the telltale; so are contrast clauses about what a lazier author would have done ("rather than omit / rather than leave to a reviewer / rather than forcing one prediction"). First-person METHODOLOGICAL voice is fine ("we treat the scores as formative", "the stage mapping is ours"); first-person EDITORIAL voice is not.
 
-A subspecies: **structure-narration signposts**. Sentences that narrate the document's own layout — "The overarching question is stated first; the hypotheses that follow decompose it...", "The design question is stated as a research question rather than a hypothesis", "posed informally in the Introduction" — are stage directions too. Headings, ordering, and labels carry the structure; delete the sentence that re-announces it. (Also a structure rule from the same session: ALL research questions precede ALL hypotheses — an overarching RQ1 covering the hypothesis set, narrower RQs after it, then H1...Hn, each multi-part hypothesis split into separately stated and separately motivated sub-hypotheses like H4a/H4b.)
+A subspecies: **structure-narration signposts**. Sentences that narrate the document's own layout — "The overarching question is stated first; the hypotheses that follow decompose it...", "The design question is stated as a research question rather than a hypothesis", "posed informally in the Introduction" — are stage directions too. Headings, ordering, and labels carry the structure; delete the sentence that re-announces it. (RQ/hypothesis architecture itself: §2.5a.)
 
-User signals: "이런거 또 그 무대 그거자나. 이런 문장들은 쓰지말고"; "모든 rq먼저"; "h4a, h4b처럼 두개의 가설로 되어있더라도 엔터쳐서 두개로 분리해주고 이에 대한 논리도 펴야지."
+User signal: "이런거 또 그 무대 그거자나. 이런 문장들은 쓰지말고."
 
 Further removals from a second manuscript's sweep (before → after):
 - "Three qualifications keep this reading honest." → "Three qualifications apply."
