@@ -633,32 +633,6 @@ Italicize variable names, regression terms, and short code-like tokens when they
 
 Tables, footers, and equation blocks have their own conventions; italicize variables in body prose.
 
-## 4.6a No stage-direction prose addressed at the reviewer
-
-Do not write sentences that narrate the paper's own honesty or tell the reader how to weigh the evidence — "stage directions" performed for the reviewer. The content stays; the performance goes. Sweep for these before submission and after any caveat-heavy revision round (caveating passes breed them).
-
-Real removals (before → after):
-- "Three qualifications keep this reading honest." → "Three qualifications apply."
-- "Two diagnostics bound the reading." → delete the sentence; the diagnostics that follow speak for themselves.
-- "...and we state the boundary rather than average over it." → end the sentence before the clause.
-- "...which is itself informative: [content]" → drop the clause, keep the content.
-- "The contrast is informative: vacancy demand is a flow..." → "Vacancy demand is a flow..."
-- "The signature still disciplines interpretation: it gives no support to..." → "They still give no support to..."
-- "...within limits the design makes explicit." → name the actual limit ("though its reach is bounded by sparse Translator capacity").
-- "Exception rows are reported as named exceptions." (table note) → delete.
-- "carries named exceptions" / "robust with named exceptions" → "has exceptions" / "robust with exceptions".
-- "so we read them side by side: [content]" / "we read the evidence as X" → state the content directly ("the evidence is X").
-
-KEEP statements that look similar but carry substance:
-- Claim-scope statements: "we do not claim the fine-industry comparison."
-- Data properties: "zero is an informative feature of the measured workforce."
-- Design function: "the matched design keeps them apart"; "matching holds scale fixed by construction."
-- Test properties: "the test bounds the alternative rather than settles it."
-
-The test: if the sentence performs how careful or honest the paper is being, delete or convert it; if it states what is claimed, measured, or bounded, keep it.
-
-User signal: "리뷰어에게 말을거는 무대지시문 같은거 빼줘."
-
 ## 4.7 No author-name branding for methods
 
 Do NOT brand your own paper's methods or variables with another author's name. For example, rename "Park-imputed controls" → "imputed controls" or "industry-year median fill." Cite the source paper for the method in the methods section, but don't make the source author's name part of your variable label.
@@ -686,9 +660,21 @@ A subspecies: **structure-narration signposts**. Sentences that narrate the docu
 
 User signals: "이런거 또 그 무대 그거자나. 이런 문장들은 쓰지말고"; "모든 rq먼저"; "h4a, h4b처럼 두개의 가설로 되어있더라도 엔터쳐서 두개로 분리해주고 이에 대한 논리도 펴야지."
 
+Further removals from a second manuscript's sweep (before → after):
+- "Three qualifications keep this reading honest." → "Three qualifications apply."
+- "Two diagnostics bound the reading." → delete the sentence; the diagnostics that follow speak for themselves.
+- "...and we state the boundary rather than average over it." → end the sentence before the clause.
+- "...which is itself informative: [content]" / "The contrast is informative: [content]" → drop the wrapper, keep the content.
+- "The signature still disciplines interpretation: it gives no support to..." → "They still give no support to..."
+- "...within limits the design makes explicit." → name the actual limit ("though its reach is bounded by sparse Translator capacity").
+- "Exception rows are reported as named exceptions." (table note) → delete; "carries/robust with named exceptions" → "has/robust with exceptions".
+- "so we read them side by side: [content]" / "we read the evidence as X" → state the content directly ("the evidence is X").
+
+KEEP statements that look similar but carry substance — claim scope ("we do not claim the fine-industry comparison"), data properties ("zero is an informative feature of the measured workforce"), design function ("the matched design keeps them apart"), test properties ("the test bounds the alternative rather than settles it"). The test: if the sentence performs how careful the paper is being, delete or convert; if it states what is claimed, measured, or bounded, keep.
+
 Add the ban list to the audit script as regex patterns so revision rounds cannot reintroduce them.
 
-User signal: "작업지시나 리뷰어는 몰라도 되는 문장들이 들어갈 필요는 없어."
+User signals: "작업지시나 리뷰어는 몰라도 되는 문장들이 들어갈 필요는 없어."; "리뷰어에게 말을거는 무대지시문 같은거 빼줘."
 
 ---
 
