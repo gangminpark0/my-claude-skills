@@ -230,17 +230,39 @@ When the theory section is organized one-subsection-per-hypothesis (§2.2 = H1, 
 
 User signals: "2.2는 H1 설명 섹션인데 H2, H3 얘기가 들어있다 — 다 지워"; "2에서는 분석 데이터(예: SDC) 얘긴 하면 안돼."
 
-### 2.4f Post-exploratory papers: competing hypotheses + transparency statement, never a reversed hypothesis
+### 2.4f Post-exploratory papers: rival explanation, provenance note, never a reversed hypothesis
 
 When a paper is built on data that was already explored (a second paper from an archived candidate analysis, a null that became the headline), the HARKing guardrails are:
 
 - **Never reverse a failed prediction.** If the original documented hypothesis predicted positive and the data returned null, do NOT restate it as "we predicted no effect." That is textbook HARKing and it is checkable against the archive.
-- **Competing-hypotheses device.** Where two theoretical logics genuinely existed ex ante (e.g., augmentation predicts a positive stage-matched effect; verification-burden/security-constraint logic predicts null), state them as competing predictions (H3-a vs H3-b) and let the data adjudicate. This is honest AND more interesting than a single-direction hypothesis.
-- **Research-transparency statement** in the methods: one paragraph disclosing (i) hypotheses that were pre-specified in a documented internal analysis plan before estimation, (ii) which framing was elaborated after seeing exploratory results, (iii) that all pre-specified tests are reported regardless of outcome and none was removed or reversed. A provenance archive (candidate-generation history) is what makes this paragraph defensible.
+- **The theoretically favored direction stays the hypothesis; the post-hoc account becomes the rival explanation** in adjacent prose, with its evidence assigned to an RQ (full form in §2.5a). Do not bundle the two into one "competing-predictions hypothesis."
+- **Provenance note** in the methods: a short paragraph stating (i) the paper's data genre, (ii) that hypotheses and analysis plan were documented before the estimation reported, (iii) which single framing was developed after seeing a result, and (iv) any shared-dataset/companion-paper overlap. Write it per §2.4g.
 - Supported original hypotheses can be presented as-is when a documented pre-estimation record exists; the interesting null carries the discussion, not a retrofitted prediction.
-- The fully honest upgrade path is a new confirmatory study (new data wave, pre-registered); when that is out of scope, an interpretive qualitative study (member checking, mechanism adjudication) can carry the "why" question but must not be called confirmation.
+- The fully honest upgrade path is a new confirmatory study (new data wave, pre-registered); when that is out of scope, an interpretive qualitative study (population-peer validation, mechanism adjudication) can carry the "why" question but must not be called confirmation.
 
-User signal: "가설을 재밌게 바꿔도 되는지" — the answer is: reframe and compete, never reverse.
+User signal: "가설을 재밌게 바꿔도 되는지" — the answer is: reframe, never reverse.
+
+### 2.4g Disclose the fact, not the confession
+
+Provenance and limitation prose states what is true about the paper; it does not narrate the author's workflow in self-incriminating terms. Ordinary research practice is not a confession item: secondary analysis of existing survey or panel data is a legitimate genre, and nobody writing on a public panel discloses "I looked at correlations before choosing a topic." Draft the paragraph so a fair reader learns the facts they need and nothing performs guilt.
+
+| Confessional (cut) | Factual (keep) |
+|---|---|
+| "its data were first analyzed in a candidate-generation exercise in which stage-outcome associations, among other patterns, were examined" | "This paper reports a secondary analysis of a survey conducted for a broader institutional assessment." |
+| "All hypotheses are therefore disclosed-exploratory-origin tests on non-independent data, not preregistered confirmatory tests." | "The hypotheses and the analysis plan were documented before the estimation reported here." |
+| heading: "Transparency statement." | heading: "Data and analysis provenance." |
+| abstract closer: "…with hypotheses of exploratory origin" | (nothing; the methods note carries it) |
+
+Rules of thumb:
+- **Frame by genre, not by autobiography.** Name what kind of study this is; do not narrate how the topic was chosen.
+- **Never self-label in the accusation's vocabulary.** State positively what IS documented instead of announcing which purity standard the paper fails.
+- **Scope the post-hoc admission to the one item that needs it, and only where it is load-bearing.** A rival explanation developed after a null is disclosed *because that is why the follow-up study exists* and why the results section says "awaiting independent test" — not as penance. If a disclosure supports no claim anywhere in the paper, it is decoration; cut it.
+- **Keep unconditionally: shared-dataset and companion-paper overlap.** That is a publication-ethics duty (duplicate-publication screening), not a stylistic choice, and it belongs in the cover letter too.
+- **Do not restate caveats that live elsewhere.** "Associations, not causal effects" belongs in limitations; archive inventories belong in the data-availability statement.
+
+Test: would a fair reader learn a fact they need in order to weigh the claims? Keep it. Does the sentence mainly narrate process or perform humility? Cut it. (Adjacent bans: §4.8 stage directions; §2.2 defensive abstract closers.)
+
+User signals: "이건 내 논문 작성 방식인데"; "자기 고발적 서술 안하도록 해줘."
 
 ## 2.5 Hypothesis statement format
 
