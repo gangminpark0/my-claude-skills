@@ -249,6 +249,19 @@ User signal: "가설을 재밌게 바꿔도 되는지" — the answer is: refram
 - Never use math operators in hypothesis prose: ×, ≥, ≤, ∈. Replace with "interacts with", "at or above", "at or below", "in the set of".
 - The mathematical specification belongs in the methods section, not in the hypothesis statement.
 
+**Lean statements: the statement carries the core prediction only.** Scope conditions, operational definitions, and design context migrate into the surrounding theory prose:
+- A scope condition shared by the hypothesis set (e.g., "outside the information-producing industry") is stated ONCE in the theory section as an applies-throughout sentence ("One scope condition applies throughout: ...") — not repeated at the head of every statement.
+- Operational glosses ("tilts toward Hybrids, meaning Hybrids outnumber Specialists") live in the development paragraph before the statement; paired hypotheses can share one bridge sentence ("Both predictions compare Hybrid-tilted with Specialist-tilted firms.").
+- Keep inside the statement only what is constitutive of the prediction: direction, construct names, and — for comparative hypotheses — the comparison group ("than Specialist-tilted firms" stays).
+
+Worked example (one session's evolution):
+- Overloaded: "Among firms outside the information-producing industry that hold an observed AI capability workforce, productivity is higher when Hybrids outnumber Specialists in that workforce than when they do not."
+- Lean: "Productivity is higher when a firm's AI capability workforce tilts toward Hybrids rather than Specialists." (scope → the applies-throughout sentence; operational tilt definition → the development paragraph)
+
+Calibration: when a statement reads ambiguous — a missing comparator, an undefined term — the FIRST fix is the development paragraph, not loading the statement. The hypothesis↔result-lede repetition of the core clause remains required (§3.6).
+
+User signals: "가설 서술을 좀 명확하게 해야하지 않나?" then "가설에 너무 모든걸 담기보다는 핵심만 남기고 나머지는 가설을 설명하는 쪽에 쓰는게 어때?" — clarity comes from relocating context, not stuffing the statement.
+
 **Mechanism hypotheses** (often labeled H3, H4) use a channel template:
 > "The [main effect] in [main hypothesis] operates through [mediating variable Y]. The [outcome] is amplified in firms / settings where Y is present, and muted where Y is absent."
 
