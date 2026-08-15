@@ -653,6 +653,10 @@ Manuscript prose describes the research, never the act of writing or reviewing i
 
 Related bans already covered elsewhere: "It is important to note" (§4.3), work-log subsection heads (§2.6a). Adverbs of virtue — honestly, transparently, candidly, precisely — attached to reporting verbs are the telltale; so are contrast clauses about what a lazier author would have done ("rather than omit / rather than leave to a reviewer / rather than forcing one prediction"). First-person METHODOLOGICAL voice is fine ("we treat the scores as formative", "the stage mapping is ours"); first-person EDITORIAL voice is not.
 
+A subspecies: **structure-narration signposts**. Sentences that narrate the document's own layout — "The overarching question is stated first; the hypotheses that follow decompose it...", "The design question is stated as a research question rather than a hypothesis", "posed informally in the Introduction" — are stage directions too. Headings, ordering, and labels carry the structure; delete the sentence that re-announces it. (Also a structure rule from the same session: ALL research questions precede ALL hypotheses — an overarching RQ1 covering the hypothesis set, narrower RQs after it, then H1...Hn, each multi-part hypothesis split into separately stated and separately motivated sub-hypotheses like H4a/H4b.)
+
+User signals: "이런거 또 그 무대 그거자나. 이런 문장들은 쓰지말고"; "모든 rq먼저"; "h4a, h4b처럼 두개의 가설로 되어있더라도 엔터쳐서 두개로 분리해주고 이에 대한 논리도 펴야지."
+
 Add the ban list to the audit script as regex patterns so revision rounds cannot reintroduce them.
 
 User signal: "작업지시나 리뷰어는 몰라도 되는 문장들이 들어갈 필요는 없어."
