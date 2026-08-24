@@ -1,0 +1,4 @@
+interface:
+  display_name: "Korean Administrative Documents"
+  short_description: "Create and verify Korean administrative deliverables"
+  default_prompt: "Use $korean-administrative-documents to create or revise Korean official letters, completion forms, submission lists, and supporting tables, then validate the frozen deliverables until five consecutive zero-issue audits."
