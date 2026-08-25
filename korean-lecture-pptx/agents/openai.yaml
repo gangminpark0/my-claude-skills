@@ -1,0 +1,4 @@
+interface:
+  display_name: "Korean Lecture PPTX"
+  short_description: "Design and verify Korean lecture decks and narration"
+  default_prompt: "Use $korean-lecture-pptx to plan or revise this Korean lecture deck, write natural speaker notes, preserve existing edits, and validate the rendered PPTX."
