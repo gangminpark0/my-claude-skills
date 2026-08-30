@@ -729,6 +729,18 @@ Add the ban list to the audit script as regex patterns so revision rounds cannot
 
 User signals: "작업지시나 리뷰어는 몰라도 되는 문장들이 들어갈 필요는 없어."; "리뷰어에게 말을거는 무대지시문 같은거 빼줘."
 
+## 4.9 Instant readability: hook-first abstract, plain academic diction
+
+Added 2026-08-22 from a full-manuscript revision session. The bar: every sentence is understood on FIRST read, in flow, by an academic reader outside the immediate subfield. This applies to the whole manuscript, not just the front matter.
+
+- **Abstract opens with a hook** — a question or sharp claim the reader feels immediately (e.g., "Why would an organization that runs on well-ordered routines struggle to automate them?"). The rest of the abstract must land without re-reading: short sentences, no compressed semicolon compounds, no metaphor carrying load-bearing meaning. Give one-clause plain definitions of the paper's own constructs on first mention ("routine rigidity, the tendency to preserve existing processes").
+- **Introduction paragraph 1 carries citations.** The puzzle paragraph is not citation-free: anchor the "established answer" and its complication with 2-4 canonical citations so the setup is trusted immediately. (Refines the §2.3 puzzle-first arc; the no-hypothesis-labels and no-numbers rules still hold.)
+- **Conventional academic terminology over invented metaphor.** Do not build metaphor systems (gates, brakes, locks, recipes, solvents, walls, attachments) and let them carry claims; state the claim in standard terms (constraint, negative association, weakens, moderates, releases). At most ONE signature phrase per paper, phrased in plain words ("redesigning routines, not simply handing them over"), reused verbatim at the protected echo points (§3.6).
+- **Every paragraph opens by linking to the previous one** — answering a question the previous paragraph raised, carrying a shared keyword, or naming an explicit contrast ("Automation research, meanwhile, points in the opposite direction."). §4.2's bumper check applies paper-wide, introduction included.
+- **Unpack abstraction chains.** If a sentence needs a second read, split it or convert abstract-noun constructions into clauses ("the costlessness of X was a boundary condition of Y" → "X used to carry no cost, and that was a boundary condition of Y").
+
+User signals: "너무 어렵게 읽힌다"; "직관적으로 딱 읽히게 해줘"; "앱스트랙은 딱 와닿아야지. 후크 문장으로 시작하자"; "인트로 첫 문단에 인용이 너무 없고"; "용어는 일반적으로. 논문에 쓰는 용어로"; "앞 문단과 연결 자연스럽게 흐름에 맞춰"; "문장은 불필요하게 길지 않게".
+
 ---
 
 # PART 5 — Empirical conventions
@@ -856,6 +868,18 @@ For numbered-citation journals (IEEE and similar), do NOT hand-number citations 
 - The docx generator maps keys to numbers by FIRST APPEARANCE in reading order, emits `[n]` in text, and writes the reference list in that order from a single reference dictionary inside the generator.
 - The audit asserts: used keys == defined keys (both directions), numbers span 1..N with no gaps, and the printed list is ordered 1..N.
 - Reordering sections or adding a citation then costs one rebuild, not a manual renumbering cascade (the numbered-citation analogue of §7.3b).
+
+## 5.13 Results subsection headings name the test type, not the claim
+
+Results subsections are titled with the **conventional analysis vocabulary**, plus the hypothesis labels in parentheses:
+
+- Measurement model → Direct effects (H1, H2) → Coefficient contrasts (H3a, H3b) → Moderation by X (H4) → Mediation through M (H5) → Robustness.
+
+Do NOT put the substantive claim or an invented conceptual phrase in the heading ("The predicted matching is significant for...", "매칭은 인지적 측면에서 확립된다"). The reader should recognize the test type from the heading alone; the verdict belongs in the subsection's FIRST sentence (the deductive lede: "Hypothesis 3a is supported: ..."). Heading = test name; lede = result. This division keeps headings scannable across papers while preserving 두괄식 within the subsection.
+
+The same rule governs body terminology: use the field's standard terms (moderation, mediation, interaction, coefficient contrast, direct/indirect effect) rather than paper-specific coinages, which readers must decode ("짝지음", "release condition" as a heading term).
+
+User signals: "예측된 짝지음이 뭐야. 짝지음 이상하자나. 논문표현으로. moderation mediation 이런걸 써야지."
 
 ---
 
