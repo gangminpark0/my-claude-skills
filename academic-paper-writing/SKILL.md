@@ -741,6 +741,26 @@ Added 2026-08-22 from a full-manuscript revision session. The bar: every sentenc
 
 User signals: "너무 어렵게 읽힌다"; "직관적으로 딱 읽히게 해줘"; "앱스트랙은 딱 와닿아야지. 후크 문장으로 시작하자"; "인트로 첫 문단에 인용이 너무 없고"; "용어는 일반적으로. 논문에 쓰는 용어로"; "앞 문단과 연결 자연스럽게 흐름에 맞춰"; "문장은 불필요하게 길지 않게".
 
+## 4.10 Word-level substitutions: jargon, Latinisms, revision-history language
+
+Added 2026-09-03 from a Technovation revision session. Beyond sentence-level meta-commentary (§4.8) and diction (§4.9), certain individual WORDS mark prose as written for the referee or the psychometrician rather than the reader. Sweep them globally — a single leftover is an inconsistency.
+
+| Banned / suspect | Use instead | Why |
+|---|---|---|
+| "battery" / "batteries" (item battery, four-item battery, mediator battery) | "measure(s)", "item set", "items" | Psychometric jargon, alien to general management readers. Watch verb collisions after substitution ("the three measures measure..." → "the three measures capture..."). |
+| "scale" as the substitute | avoid unless the instrument is validated | "Scale" implies a psychometrically established instrument; if reviewers attacked validation, the word hands them the attack. "Measure" is neutral. |
+| "per se" | "itself", or delete | Latinism; plain English reads faster and loses nothing. |
+| "retained", "retained for continuity", "originally submitted", "prerevision", "the retained analytic label" | name the thing without the history ("X is the analytic label for...") | Submission-history language: a published-paper reader has no referent for "retained from what?". During a review round these phrases DO have a function in Methods/Robustness (they show referees what stayed fixed) — keep them there until acceptance, then sweep at proofs. Remove immediately from reader-facing sections (Abstract, Introduction, theory). |
+| "analytically labeled X" re-attached at every mention | make the label-scope confession ONCE where the construct is defined; bare construct name everywhere else | A disclosure repeated becomes a tic; it also re-flags the weakness on every page (see §2.4g: disclose the fact, not the confession). |
+| Undefined coinages ("a third input", "in a different register") | the concrete referent ("the gains from Generative AI use") or standard terms | Never make the reader decode a private metaphor — §4.9's metaphor rule at word scale. |
+| "is our step", "we invoke X here" | "we extend this premise", "the framework implies" | First-person EDITORIAL voice about the paper's own moves (§4.8); make the theory the grammatical subject, not the authors. |
+
+Same-paragraph hedge repetition: "remains an unresolved question" / "an open empirical question" / "remain poorly understood" are one idea. Say it once per paragraph — ideally as an opening–closing frame — and delete restatements in between (§4.3's repetition rule at claim scale).
+
+Operational notes: add the banned words to the audit regex list (like §4.8) so later revision rounds cannot reintroduce them; after a global substitution, re-sync any response-letter excerpts that quote the changed passages, and re-check reviewer-quote boxes were NOT altered (a reviewer's own words stay verbatim even when they use a banned word).
+
+User signals: "battery랑 또 뭐지? 내가 안좋아하는 단어."; "battery말고 다른 단어 없을까?"; "retained의 뜻이 뭐고 이거 다른 단어로 쓰면 안되?"; "여기서 perse는 왜나오는거지?"; "리뷰어말고 그냥 독자들은 retained 이런 얘기가 논문 intro에 나오면 이상하지 않아?".
+
 ---
 
 # PART 5 — Empirical conventions
